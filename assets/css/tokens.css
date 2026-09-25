@@ -1,0 +1,91 @@
+/* Oncoria tokens — generato da tokens.json del design system */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+  --font-display: "League Spartan", "Montserrat", system-ui, sans-serif;
+  --font-sans: "Barlow", system-ui, sans-serif;
+  --brand: #0d2168;
+  --brand-deep: #0a1850;
+  --on-brand: #ffffff;
+  --on-brand-deep: #ffffff;
+  --brand-tint: #e8ecf8;
+  --mint: #72cbb0;
+  --mint-ink: #0e6e59;
+  --mint-tint: #e2f4ee;
+  --surface-100: #f4f6fb;
+  --surface-000: #ffffff;
+  --ink: #16203f;
+  --ink-muted: #5a6485;
+  --line: #dde2ee;
+  --line-strong: #8a93b2;
+  --deficit: #b3421a;
+  --deficit-tint: #fdece4;
+  --watch: #855c00;
+  --watch-tint: #fcf2d9;
+  --balance: #4a5578;
+  --balance-tint: #eceff6;
+  --focus: #0d2168;
+  --shadow-card: 0 1px 2px rgba(13,33,104,0.06), 0 6px 20px rgba(13,33,104,0.06);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+  --brand: #9fb1f0;
+  --brand-deep: #070d2a;
+  --on-brand: #0a1030;
+  --on-brand-deep: #eef1fa;
+  --brand-tint: #1a2458;
+  --mint: #72cbb0;
+  --mint-ink: #7fd6bb;
+  --mint-tint: #0f3a32;
+  --surface-100: #0a1030;
+  --surface-000: #121a45;
+  --ink: #eef1fa;
+  --ink-muted: #a7b0cc;
+  --line: #28336e;
+  --line-strong: #6a76a8;
+  --deficit: #f5a473;
+  --deficit-tint: #3d1e12;
+  --watch: #f0c35c;
+  --watch-tint: #3a2e0b;
+  --balance: #b7c0db;
+  --balance-tint: #1f2856;
+  --focus: #9fb1f0;
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.4);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --brand: #9fb1f0;
+  --brand-deep: #070d2a;
+  --on-brand: #0a1030;
+  --on-brand-deep: #eef1fa;
+  --brand-tint: #1a2458;
+  --mint: #72cbb0;
+  --mint-ink: #7fd6bb;
+  --mint-tint: #0f3a32;
+  --surface-100: #0a1030;
+  --surface-000: #121a45;
+  --ink: #eef1fa;
+  --ink-muted: #a7b0cc;
+  --line: #28336e;
+  --line-strong: #6a76a8;
+  --deficit: #f5a473;
+  --deficit-tint: #3d1e12;
+  --watch: #f0c35c;
+  --watch-tint: #3a2e0b;
+  --balance: #b7c0db;
+  --balance-tint: #1f2856;
+  --focus: #9fb1f0;
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.4);
+  color-scheme: dark;
+}
