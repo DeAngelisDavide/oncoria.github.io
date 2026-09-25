@@ -148,9 +148,10 @@ select.chip { appearance: none; font-family: inherit; font-weight: 600; color: v
 .map .node { cursor: pointer; }
 .map .node:hover .dot, .map .node.hl .dot { stroke-width: 4.5; }
 .mlegend { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 10px 14px; border-top: 1px solid var(--line); background: var(--surface-000); font-size: 12px; color: var(--ink-muted); }
-.mlegend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; border: 2px solid; margin-right: 6px; vertical-align: -1px; }
-.mlegend .ln { display: inline-block; width: 18px; height: 0; border-top: 3px dashed var(--mint-ink); margin-right: 6px; vertical-align: 3px; }
-.mlegend .ln.tr { border-top: 2px solid var(--brand); }
+.mlegend span { display: inline-flex; align-items: center; gap: 6px; line-height: 16px; }
+.mlegend i { display: block; flex: none; width: 10px; height: 10px; box-sizing: border-box; border-radius: 50%; border: 2px solid; }
+.mlegend .ln { display: block; flex: none; width: 18px; height: 0; border-top: 3px dashed var(--mint-ink); }
+.mlegend .ln.ln-transit { border-top: 3px solid var(--brand); }
 .mapside { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 .netsum { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; background: var(--surface-100); border-radius: var(--radius-md); padding: 12px 14px; }
 .mapcard .onc-table td { padding: 8px; }
