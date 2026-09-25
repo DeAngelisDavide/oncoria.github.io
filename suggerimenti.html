@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suggerimenti · Oncoria</title>
+<meta name="description" content="Mockup della dashboard Oncoria per la farmacia ospedaliera: rete oncologica della provincia di Salerno (dati simulati).">
+<link rel="icon" type="image/png" href="assets/img/oncoria-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=League+Spartan:wght@600;700&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="assets/js/app.js"></script>
+</head>
+<body>
+<div class="onc app">
+  <aside class="side" aria-label="Navigazione principale">
+    <a class="brandlink" href="index.html"><img src="assets/img/oncoria-lockup-white.png" alt="Oncoria — L’efficienza che fa muovere la salute"></a>
+    <a class="nav" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="12" width="7" height="9" rx="2"/><rect x="3" y="16" width="7" height="5" rx="2"/></svg>Panoramica</a>
+<a class="nav" href="fabbisogno.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8"/><path d="M15 8h5v5"/></svg>Fabbisogno previsto</a>
+<a class="nav" href="rete.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3z"/><path d="M9 3v15M15 6v15"/></svg>Rete presidi</a>
+<a class="nav on" href="suggerimenti.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18c6 0 11-4 13-11"/><path d="M11 6h7v7"/></svg>Suggerimenti<span class="cnt">3</span></a>
+<a class="nav" href="trasferimenti.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="13" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Trasferimenti<span class="cnt">2</span></a>
+<a class="nav" href="ordini.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>Ordini</a>
+<div class="grp">Pilota</div>
+<a class="nav" href="kpi.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>KPI di validazione</a>
+<a class="nav" href="regole.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>Regole e vincoli</a>
+
+    <div class="me"><span class="av">MR</span><div><b>Dott.ssa M. Rinaldi</b><small>Farmacia ospedaliera · AOU Ruggi</small></div></div>
+  </aside>
+  <main class="main">
+    <div class="top">
+      <div><div class="onc-label">Venerdì 25 settembre 2026 · aggiornato alle 08:40</div><h1>Suggerimenti di riallocazione</h1></div>
+      <div class="tools"><span class="chip">Da decidere <b>3</b></span><span class="chip">In corso <b>1</b></span><button class="iconbtn" id="theme" type="button" aria-label="Cambia tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button></div>
+    </div>
+<style>
+.cmp{width:100%;border-collapse:collapse;font-size:13px}
+.cmp th,.cmp td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.cmp th{font:600 11px/14px var(--font-sans);letter-spacing:.5px;text-transform:uppercase;color:var(--ink-muted)}
+.cmp td:first-child{color:var(--ink-muted);width:150px}
+.cmp .best{background:var(--mint-tint)}
+.cmp .late{color:var(--deficit);font-weight:700}
+.cmp .good{color:var(--mint-ink);font-weight:700}
+.log{font-size:13px;display:flex;flex-direction:column;gap:8px}
+.log div{display:grid;grid-template-columns:110px 1fr;gap:10px}
+.log span{color:var(--ink-muted)}
+.why{counter-reset:w;display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+.why li{display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:14px;line-height:20px}
+.why li::before{counter-increment:w;content:counter(w);width:24px;height:24px;border-radius:50%;background:var(--brand-tint);color:var(--brand);font-weight:700;font-size:12px;display:grid;place-items:center}
+.dir{font:600 11px/14px var(--font-sans);letter-spacing:.5px;text-transform:uppercase;padding:2px 6px;border-radius:4px}
+.dir.in{background:var(--mint-tint);color:var(--mint-ink)}.dir.out{background:var(--brand-tint);color:var(--brand)}
+</style><div class="grid side-l">
+  <section class="onc-card" style="padding:8px">
+    <div class="seg" style="margin:8px 8px 4px" id="filter"><button class="on" data-v="open">Aperti</button><button data-v="all">Tutti</button><button data-v="done">Storico</button></div>
+    <div class="list" id="slist" style="margin-top:6px"></div>
+  </section>
+  <div class="col" id="sdetail"></div>
+</div>
+    <div class="demo">Mockup Oncoria · presidi reali della provincia di Salerno, persone inventate, quantità e movimenti simulati a scopo dimostrativo</div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script>
+(function(){
+const D=ONC, N=Object.fromEntries(D.nodes.map(n=>[n.id,n])), DR=Object.fromEntries(D.drugs.map(d=>[d.id,d]));
+const S=[
+ {id:'S-0231',drug:'tdxd',src:'tortora',dst:'ruggi',qty:2,dir:'in',status:'new',when:'oggi 08:40',need:'mar 29 set, 2 sedute',
+  why:['All’AOU Ruggi mancano 2 fiale per le sedute di martedì 29 settembre (giacenza 10, fabbisogno 12).','Il nuovo ordine arriva mercoledì 30 settembre (lead time 5 giorni): dopo il bisogno.','Il P.O. Andrea Tortora di Pagani ha 8 fiale e ne impegna 4 nei prossimi 14 giorni: dopo la cessione resta a +2.','È il cedente più vicino (22 km, ~2 h 30 incluse approvazioni). Vallo della Lucania è l’alternativa (+2, 95 km).'],
+  opts:[['Nuovo ordine','5 giorni','mer 30 set','late:No, arriva dopo','—','Già inviato (ORD-0917)'],['Rete · Pagani','~2 h 30','lun 28 set, mattina','good:Sì','8 → 6, resta +2','Scelta suggerita'],['Rete · Vallo della Lucania','~3 h 30','lun 28 set, pomeriggio','good:Sì','5 → 3, resta 0','Cedente senza margine residuo']],
+  checks:[['ok','Catena del freddo 2–8 °C: contenitore validato disponibile'],['ok','Lotto T7719, scadenza 05/2027 (oltre la soglia di 60 giorni)'],['ok','Il cedente resta in equilibrio dopo la cessione'],['wait','Approvazione della farmacia del P.O. Andrea Tortora'],['wait','Documento di trasferimento tra aziende (ASL Salerno → AOU Ruggi)']],
+  log:[['oggi 08:40','Oncoria genera il suggerimento dopo l’aggiornamento dati delle 08:35'],['oggi 08:41','Notifica alla farmacia AOU Ruggi']]},
+ {id:'S-0233',drug:'palbo',src:'ruggi',dst:'tortora',qty:1,dir:'out',status:'new',when:'oggi 08:40',need:'lun 5 ott',
+  why:['Il P.O. Andrea Tortora di Pagani prevede 1 confezione in meno del necessario entro lunedì 5 ottobre.','L’AOU Ruggi ha 22 confezioni e ne impegna 20: dopo la cessione resta a +1, sopra la scorta minima fino all’8 ottobre.','L’AOU Ruggi è il presidio in surplus più vicino a Pagani.'],
+  opts:[['Nuovo ordine (Pagani)','2 giorni','dom 27 set','good:Sì','—','Alternativa valida: lead time breve'],['Rete · da AOU Ruggi','~2 h 30','lun 28 set','good:Sì','22 → 21, resta +1','Scelta suggerita']],
+  checks:[['ok','Conservazione a temperatura ambiente'],['ok','Lotto P4410, scadenza 11/2027'],['ok','AOU Ruggi resta sopra la scorta minima'],['wait','La tua approvazione come farmacia cedente']],
+  log:[['oggi 08:40','Richiesta generata per il P.O. Andrea Tortora'],['oggi 08:40','In attesa della tua approvazione']]},
+ {id:'S-0234',drug:'pertu',src:'ruggi',dst:'vallo',qty:1,dir:'out',status:'new',when:'ieri 17:20',need:'mar 6 ott',
+  why:['Il P.O. San Luca di Vallo della Lucania è a −1 fiala per la seduta di martedì 6 ottobre.','L’AOU Ruggi ha 8 fiale e ne impegna 4: dopo le 2 fiale in viaggio verso Eboli (TR-0142) resta comunque a +3.','Eboli è più vicina ma è a +1: cedere la lascerebbe senza margine.'],
+  opts:[['Nuovo ordine (Vallo)','4 giorni','mar 29 set','good:Sì','—','Alternativa valida: c’è tempo'],['Rete · da AOU Ruggi','~3 h 30','lun 28 set','good:Sì','8 → 7, resta +3','Scelta suggerita'],['Rete · da Eboli','~2 h 30','lun 28 set','good:Sì','3 → 2, resta 0','Cedente senza margine residuo']],
+  checks:[['ok','Catena del freddo 2–8 °C'],['ok','Lotto P2291, scadenza 04/2027'],['wait','La tua approvazione come farmacia cedente'],['wait','Documento di trasferimento tra aziende (AOU Ruggi → ASL Salerno)']],
+  log:[['ieri 17:20','Richiesta generata per il P.O. San Luca'],['ieri 17:21','Notifica alla farmacia AOU Ruggi']]},
+ {id:'S-0232',drug:'pembro',src:'vallo',dst:'ruggi',qty:2,dir:'in',status:'progress',when:'gio 24 set',need:'mer 30 set',tr:'TR-0144',
+  why:['All’AOU Ruggi mancano 2 fiale per la seduta di mercoledì 30 settembre.','Il P.O. San Luca di Vallo della Lucania ha 6 fiale e ne impegna 4: dopo la cessione resta in equilibrio.','Pagani ed Eboli non hanno surplus di pembrolizumab.'],
+  opts:[['Nuovo ordine','5 giorni','mar 29 set','good:Sì, al limite','—','Nessun margine se il fornitore ritarda'],['Rete · Vallo della Lucania','~3 h 30','sab 26 set','good:Sì','6 → 4, resta 0','Accettata']],
+  checks:[['ok','Approvato dalla farmacia AOU Ruggi'],['ok','Approvato dalla farmacia P.O. San Luca'],['wait','Ritiro programmato sabato 26 settembre, 08:00']],
+  log:[['gio 24 set 10:12','Suggerimento generato'],['gio 24 set 11:05','Approvato da AOU Ruggi (M. Rinaldi)'],['gio 24 set 15:40','Approvato da P.O. San Luca'],['gio 24 set 15:41','Fiale riservate · creato TR-0144']]},
+ {id:'S-0228',drug:'pertu',src:'ruggi',dst:'eboli',qty:2,dir:'out',status:'accepted',when:'mer 23 set',need:'ven 25 set',tr:'TR-0142',
+  why:['Eboli era a −2 fiale per le sedute di venerdì 25 settembre.','L’AOU Ruggi era il cedente più vicino in surplus.'],
+  opts:[['Rete · da AOU Ruggi','~2 h 30','ven 25 set','good:Sì','10 → 8, resta +4','Accettata']],checks:[['ok','Approvato da entrambe le farmacie'],['ok','In viaggio con registrazione della temperatura']],
+  log:[['mer 23 set 09:30','Suggerimento generato'],['mer 23 set 12:10','Approvato da entrambe le farmacie'],['oggi 08:05','Ritirato · TR-0142 in viaggio']]},
+ {id:'S-0225',drug:'sacit',src:'ruggi',dst:'polla',qty:1,dir:'out',status:'accepted',when:'lun 21 set',need:'mer 23 set',tr:'TR-0139',
+  why:['Polla era a −1 fiala per la seduta di mercoledì 23 settembre.'],opts:[['Rete · da AOU Ruggi','~3 h 30','mar 22 set','good:Sì','6 → 5, resta +2','Accettata']],checks:[['ok','Ricevuto a Polla, in attesa di presa in carico']],
+  log:[['lun 21 set 10:00','Suggerimento generato'],['mar 22 set 14:30','Ricevuto a Polla']]},
+ {id:'S-0221',drug:'trast',src:'tortora',dst:'ruggi',qty:1,dir:'in',status:'rejected',when:'ven 18 set',need:'lun 21 set',
+  why:['L’AOU Ruggi era sotto la scorta minima di trastuzumab s.c.'],opts:[['Nuovo ordine anticipato','2 giorni','dom 20 set','good:Sì','—','Scelto dal farmacista'],['Rete · Pagani','~2 h 30','sab 19 set','good:Sì','9 → 8','Scartata']],checks:[],
+  log:[['ven 18 set 11:00','Suggerimento generato'],['ven 18 set 11:40','Scartato da M. Rinaldi: “il fornitore anticipa la consegna, non serve muovere scorte”']]},
+];
+const ST={new:['brand','Da decidere'],progress:['watch','In corso'],accepted:['surplus','Accettato'],rejected:['balance','Scartato']};
+const unit=(d,q)=>q>1?DR[d].unit:DR[d].u1;
+function list(f){
+  const it=S.filter(s=>f==='all'||(f==='open'?['new','progress'].includes(s.status):['accepted','rejected'].includes(s.status)));
+  document.getElementById('slist').innerHTML=it.map(s=>'<a class="li" href="#'+s.id+'" data-id="'+s.id+'"><div class="grow"><b>'+DR[s.drug].name+' · '+s.qty+' '+unit(s.drug,s.qty)+'</b><small>'+s.id+' · '+N[s.src].town+' → '+N[s.dst].town+' · '+s.when+'</small><small style="margin-top:4px"><span class="dir '+s.dir+'">'+(s.dir==='in'?'Ricevi':'Cedi')+'</span></small></div><span class="onc-badge onc-badge--'+ST[s.status][0]+'">'+ST[s.status][1]+'</span></a>').join('');
+  mark();
+}
+function mark(){const id=location.hash.slice(1)||'S-0231';document.querySelectorAll('#slist .li').forEach(a=>a.classList.toggle('on',a.dataset.id===id));}
+function detail(id){
+  const s=S.find(x=>x.id===id)||S[0], d=DR[s.drug], a=N[s.src], b=N[s.dst];
+  const vs=D.values[s.src][s.drug], vd=D.values[s.dst][s.drug];
+  const cols=s.opts.map(o=>o[0]);
+  const row=(lbl,i)=>'<tr><td>'+lbl+'</td>'+s.opts.map((o,j)=>{let v=o[i];let c='';if(v.startsWith('late:')){c='late';v=v.slice(5);}else if(v.startsWith('good:')){c='good';v=v.slice(5);}return '<td class="'+(o[5].startsWith('Scelt')||o[5]==='Accettata'?'best ':'')+c+'">'+v+'</td>';}).join('')+'</tr>';
+  let act='';
+  if(s.status==='new'&&s.dir==='in') act='<a class="onc-btn onc-btn--primary" href="trasferimenti.html" style="text-decoration:none">Invia richiesta a '+a.town+'</a><a class="onc-btn" href="ordini.html" style="text-decoration:none">Valuta nuovo ordine</a><button class="onc-btn onc-btn--ghost">Scarta con motivazione</button>';
+  if(s.status==='new'&&s.dir==='out') act='<a class="onc-btn onc-btn--primary" href="trasferimenti.html" style="text-decoration:none">Approva la cessione</a><button class="onc-btn">Proponi una quantità diversa</button><button class="onc-btn onc-btn--ghost">Rifiuta con motivazione</button>';
+  if(s.tr) act='<a class="onc-btn onc-btn--primary" href="trasferimenti.html#'+s.tr+'" style="text-decoration:none">Traccia '+s.tr+'</a>';
+  document.getElementById('sdetail').innerHTML=
+  '<section class="onc-card"><div class="hd"><div><div class="onc-label">'+s.id+' · creato '+s.when+' · <span class="dir '+s.dir+'">'+(s.dir==='in'?'Ricevi':'Cedi')+'</span></div><h2 class="onc-card-title" style="font-size:24px;line-height:30px">'+d.name+' '+d.dose+'</h2><div class="sub">Bisogno: '+s.need+'</div></div><span class="onc-badge onc-badge--'+ST[s.status][0]+'">'+ST[s.status][1]+'</span></div>'+
+  '<div class="onc-route" style="margin:6px 0 16px"><div class="onc-route__node"><b>'+a.town+'</b><span>'+a.short+' · stock '+vs.stock+' · fabb. '+vs.fabb+'</span></div><div class="onc-route__arrow">'+s.qty+' '+unit(s.drug,s.qty)+'<svg width="56" height="10" viewBox="0 0 56 10"><path d="M0 5h52M47 1l5 4-5 4" stroke="currentColor" stroke-width="2" fill="none"/></svg></div><div class="onc-route__node"><b>'+b.town+'</b><span>'+b.short+' · stock '+vd.stock+' · fabb. '+vd.fabb+'</span></div></div>'+
+  '<div style="display:flex;gap:8px;flex-wrap:wrap">'+act+'</div><div class="onc-hitl" style="margin-top:12px"><span>ⓘ</span>Oncoria suggerisce e applica le regole definite dagli operatori. La decisione finale resta ai farmacisti di entrambi i presidi.</div></section>'+
+  '<div class="grid even"><section class="onc-card"><h2 class="onc-card-title" style="margin-bottom:12px">Perché questo suggerimento</h2><ol class="why">'+s.why.map(w=>'<li><span>'+w+'</span></li>').join('')+'</ol></section>'+
+  '<section class="onc-card"><h2 class="onc-card-title" style="margin-bottom:12px">Vincoli e approvazioni</h2><div class="checks">'+(s.checks.length?s.checks.map(c=>'<div><span class="'+(c[0]==='ok'?'ok-ic':'wait-ic')+'">'+(c[0]==='ok'?'✓':'…')+'</span><span>'+c[1]+'</span></div>').join(''):'<span class="onc-muted">Nessun vincolo aperto.</span>')+'</div></section></div>'+
+  '<section class="onc-card"><h2 class="onc-card-title" style="margin-bottom:8px">Nuovo ordine o rete: il confronto</h2><div class="scroll"><table class="cmp"><thead><tr><th></th>'+cols.map(c=>'<th>'+c+'</th>').join('')+'</tr></thead><tbody>'+row('Tempo',1)+row('Disponibile',2)+row('Copre il bisogno',3)+row('Effetto sul cedente',4)+row('Note',5)+'</tbody></table></div></section>'+
+  '<section class="onc-card"><h2 class="onc-card-title" style="margin-bottom:12px">Registro delle decisioni</h2><div class="log">'+s.log.map(l=>'<div><span>'+l[0]+'</span><b style="font-weight:500">'+l[1]+'</b></div>').join('')+'</div></section>';
+  mark();
+}
+document.getElementById('filter').addEventListener('segchange',e=>list(e.detail));
+window.addEventListener('hashchange',()=>detail(location.hash.slice(1)));
+const h=location.hash.slice(1); if(['S-0228','S-0225','S-0221'].includes(h)){document.querySelector('#filter [data-v="all"]').click();} else list('open');
+detail(h||'S-0231');
+})();
+</script>
+</body>
+</html>

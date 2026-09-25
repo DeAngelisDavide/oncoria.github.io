@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rete presidi · Oncoria</title>
+<meta name="description" content="Mockup della dashboard Oncoria per la farmacia ospedaliera: rete oncologica della provincia di Salerno (dati simulati).">
+<link rel="icon" type="image/png" href="assets/img/oncoria-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=League+Spartan:wght@600;700&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="assets/js/app.js"></script>
+</head>
+<body>
+<div class="onc app">
+  <aside class="side" aria-label="Navigazione principale">
+    <a class="brandlink" href="index.html"><img src="assets/img/oncoria-lockup-white.png" alt="Oncoria — L’efficienza che fa muovere la salute"></a>
+    <a class="nav" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="12" width="7" height="9" rx="2"/><rect x="3" y="16" width="7" height="5" rx="2"/></svg>Panoramica</a>
+<a class="nav" href="fabbisogno.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8"/><path d="M15 8h5v5"/></svg>Fabbisogno previsto</a>
+<a class="nav on" href="rete.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3z"/><path d="M9 3v15M15 6v15"/></svg>Rete presidi</a>
+<a class="nav" href="suggerimenti.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18c6 0 11-4 13-11"/><path d="M11 6h7v7"/></svg>Suggerimenti<span class="cnt">3</span></a>
+<a class="nav" href="trasferimenti.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="13" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Trasferimenti<span class="cnt">2</span></a>
+<a class="nav" href="ordini.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>Ordini</a>
+<div class="grp">Pilota</div>
+<a class="nav" href="kpi.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>KPI di validazione</a>
+<a class="nav" href="regole.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>Regole e vincoli</a>
+
+    <div class="me"><span class="av">MR</span><div><b>Dott.ssa M. Rinaldi</b><small>Farmacia ospedaliera · AOU Ruggi</small></div></div>
+  </aside>
+  <main class="main">
+    <div class="top">
+      <div><div class="onc-label">Venerdì 25 settembre 2026 · aggiornato alle 08:40</div><h1>Rete presidi · Provincia di Salerno</h1></div>
+      <div class="tools"><label class="sr" for="drugsel" style="position:absolute;left:-9999px">Farmaco</label><select class="chip" id="drugsel"><option value="tdxd">Trastuzumab deruxtecan 100 mg</option><option value="pembro">Pembrolizumab 100 mg</option><option value="trast">Trastuzumab s.c. 600 mg</option><option value="palbo">Palbociclib 125 mg</option><option value="pertu">Pertuzumab 420 mg</option><option value="sacit">Sacituzumab govitecan 180 mg</option></select><button class="iconbtn" id="theme" type="button" aria-label="Cambia tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button></div>
+    </div>
+<section class="onc-card mapcard">
+  <div class="hd"><div><h2 class="onc-card-title" id="m-title">Mappa della rete</h2><div class="sub">Dimensione = giacenza, colore = stato, numero = saldo a 14 giorni. Frecce: riallocazioni suggerite (tratteggio verde), trasferimenti in corso (blu), alternative scartate (grigio).</div></div></div>
+  <div class="mapwrap big">
+    <div class="mapbox" id="map-rete"></div>
+    <div class="mapside">
+      <div class="netsum" id="m-sum"></div>
+      <div class="scroll"><table class="onc-table" id="m-table"></table></div>
+      <div id="m-sugg"></div>
+    </div>
+  </div>
+</section><section class="onc-card">
+  <div class="hd"><div><h2 class="onc-card-title">Saldo a 14 giorni · presidi × farmaci</h2><div class="sub">Ogni cella è giacenza meno fabbisogno previsto. Clicca un farmaco per vederlo sulla mappa.</div></div>
+  <div class="onc-meter__legend"><span><i style="background:var(--deficit)"></i>Deficit</span><span><i style="background:var(--watch)"></i>A rischio</span><span><i style="background:var(--balance)"></i>Equilibrio</span><span><i style="background:var(--mint)"></i>Surplus</span></div></div>
+  <div class="scroll"><table class="onc-table heat" id="matrix"><thead><tr><th style="min-width:160px">Presidio</th><th data-drug="tdxd" style="cursor:pointer;text-align:center">Trastuzumab<br><span style="text-transform:none;font-weight:500">100 mg</span></th><th data-drug="pembro" style="cursor:pointer;text-align:center">Pembrolizumab<br><span style="text-transform:none;font-weight:500">100 mg</span></th><th data-drug="trast" style="cursor:pointer;text-align:center">Trastuzumab<br><span style="text-transform:none;font-weight:500">600 mg</span></th><th data-drug="palbo" style="cursor:pointer;text-align:center">Palbociclib<br><span style="text-transform:none;font-weight:500">125 mg</span></th><th data-drug="pertu" style="cursor:pointer;text-align:center">Pertuzumab<br><span style="text-transform:none;font-weight:500">420 mg</span></th><th data-drug="sacit" style="cursor:pointer;text-align:center">Sacituzumab<br><span style="text-transform:none;font-weight:500">180 mg</span></th></tr></thead><tbody><tr><td><div class="drug" style="font-size:13px">Salerno</div><span class="onc-muted">AOU Ruggi d’Aragona · AOU</span></td><td class="cell c-deficit" data-drug="tdxd" style="cursor:pointer" title="Salerno · Trastuzumab deruxtecan: giacenza 10, fabbisogno 12">−2</td><td class="cell c-deficit" data-drug="pembro" style="cursor:pointer" title="Salerno · Pembrolizumab: giacenza 6, fabbisogno 8">−2</td><td class="cell c-watch" data-drug="trast" style="cursor:pointer" title="Salerno · Trastuzumab s.c.: giacenza 14, fabbisogno 13">+1</td><td class="cell c-surplus" data-drug="palbo" style="cursor:pointer" title="Salerno · Palbociclib: giacenza 22, fabbisogno 20">+2</td><td class="cell c-surplus" data-drug="pertu" style="cursor:pointer" title="Salerno · Pertuzumab: giacenza 8, fabbisogno 4">+4</td><td class="cell c-surplus" data-drug="sacit" style="cursor:pointer" title="Salerno · Sacituzumab govitecan: giacenza 5, fabbisogno 3">+2</td></tr><tr><td><div class="drug" style="font-size:13px">Pagani</div><span class="onc-muted">P.O. Andrea Tortora · ASL Salerno</span></td><td class="cell c-surplus" data-drug="tdxd" style="cursor:pointer" title="Pagani · Trastuzumab deruxtecan: giacenza 8, fabbisogno 4">+4</td><td class="cell c-balance" data-drug="pembro" style="cursor:pointer" title="Pagani · Pembrolizumab: giacenza 6, fabbisogno 6">0</td><td class="cell c-surplus" data-drug="trast" style="cursor:pointer" title="Pagani · Trastuzumab s.c.: giacenza 9, fabbisogno 7">+2</td><td class="cell c-deficit" data-drug="palbo" style="cursor:pointer" title="Pagani · Palbociclib: giacenza 12, fabbisogno 13">−1</td><td class="cell c-balance" data-drug="pertu" style="cursor:pointer" title="Pagani · Pertuzumab: giacenza 3, fabbisogno 3">0</td><td class="cell c-balance" data-drug="sacit" style="cursor:pointer" title="Pagani · Sacituzumab govitecan: giacenza 3, fabbisogno 2">+1</td></tr><tr><td><div class="drug" style="font-size:13px">Eboli</div><span class="onc-muted">P.O. Maria SS. Addolorata · ASL Salerno</span></td><td class="cell c-balance" data-drug="tdxd" style="cursor:pointer" title="Eboli · Trastuzumab deruxtecan: giacenza 3, fabbisogno 3">0</td><td class="cell c-balance" data-drug="pembro" style="cursor:pointer" title="Eboli · Pembrolizumab: giacenza 5, fabbisogno 4">+1</td><td class="cell c-watch" data-drug="trast" style="cursor:pointer" title="Eboli · Trastuzumab s.c.: giacenza 4, fabbisogno 5">−1</td><td class="cell c-balance" data-drug="palbo" style="cursor:pointer" title="Eboli · Palbociclib: giacenza 6, fabbisogno 6">0</td><td class="cell c-balance" data-drug="pertu" style="cursor:pointer" title="Eboli · Pertuzumab: giacenza 3, fabbisogno 2">+1</td><td class="cell c-balance" data-drug="sacit" style="cursor:pointer" title="Eboli · Sacituzumab govitecan: giacenza 1, fabbisogno 1">0</td></tr><tr><td><div class="drug" style="font-size:13px">Vallo della Lucania</div><span class="onc-muted">P.O. San Luca · ASL Salerno</span></td><td class="cell c-surplus" data-drug="tdxd" style="cursor:pointer" title="Vallo della Lucania · Trastuzumab deruxtecan: giacenza 5, fabbisogno 3">+2</td><td class="cell c-surplus" data-drug="pembro" style="cursor:pointer" title="Vallo della Lucania · Pembrolizumab: giacenza 6, fabbisogno 4">+2</td><td class="cell c-balance" data-drug="trast" style="cursor:pointer" title="Vallo della Lucania · Trastuzumab s.c.: giacenza 4, fabbisogno 4">0</td><td class="cell c-balance" data-drug="palbo" style="cursor:pointer" title="Vallo della Lucania · Palbociclib: giacenza 7, fabbisogno 6">+1</td><td class="cell c-deficit" data-drug="pertu" style="cursor:pointer" title="Vallo della Lucania · Pertuzumab: giacenza 1, fabbisogno 2">−1</td><td class="cell c-balance" data-drug="sacit" style="cursor:pointer" title="Vallo della Lucania · Sacituzumab govitecan: giacenza 2, fabbisogno 2">0</td></tr><tr><td><div class="drug" style="font-size:13px">Polla</div><span class="onc-muted">P.O. Luigi Curto · ASL Salerno</span></td><td class="cell c-watch" data-drug="tdxd" style="cursor:pointer" title="Polla · Trastuzumab deruxtecan: giacenza 2, fabbisogno 3">−1</td><td class="cell c-balance" data-drug="pembro" style="cursor:pointer" title="Polla · Pembrolizumab: giacenza 2, fabbisogno 2">0</td><td class="cell c-balance" data-drug="trast" style="cursor:pointer" title="Polla · Trastuzumab s.c.: giacenza 3, fabbisogno 3">0</td><td class="cell c-balance" data-drug="palbo" style="cursor:pointer" title="Polla · Palbociclib: giacenza 5, fabbisogno 4">+1</td><td class="cell c-balance" data-drug="pertu" style="cursor:pointer" title="Polla · Pertuzumab: giacenza 1, fabbisogno 1">0</td><td class="cell c-balance" data-drug="sacit" style="cursor:pointer" title="Polla · Sacituzumab govitecan: giacenza 1, fabbisogno 1">0</td></tr><tr><td><div class="drug" style="font-size:13px">Sapri</div><span class="onc-muted">P.O. dell’Immacolata · ASL Salerno</span></td><td class="cell c-balance" data-drug="tdxd" style="cursor:pointer" title="Sapri · Trastuzumab deruxtecan: giacenza 2, fabbisogno 2">0</td><td class="cell c-balance" data-drug="pembro" style="cursor:pointer" title="Sapri · Pembrolizumab: giacenza 2, fabbisogno 2">0</td><td class="cell c-balance" data-drug="trast" style="cursor:pointer" title="Sapri · Trastuzumab s.c.: giacenza 3, fabbisogno 2">+1</td><td class="cell c-balance" data-drug="palbo" style="cursor:pointer" title="Sapri · Palbociclib: giacenza 3, fabbisogno 3">0</td><td class="cell c-balance" data-drug="pertu" style="cursor:pointer" title="Sapri · Pertuzumab: giacenza 1, fabbisogno 1">0</td><td class="cell c-balance" data-drug="sacit" style="cursor:pointer" title="Sapri · Sacituzumab govitecan: giacenza 1, fabbisogno 1">0</td></tr></tbody></table></div>
+</section><section class="onc-card">
+  <div class="hd"><div><h2 class="onc-card-title">Presidi collegati e qualità dei dati</h2><div class="sub">Quanto sono aggiornati i dati di ciascun nodo. Accessi, basi giuridiche e integrazioni vanno verificati presidio per presidio nel pilota.</div></div><button class="onc-btn onc-btn--sm">Invita un presidio</button></div>
+  <div class="scroll"><table class="onc-table"><thead><tr><th>Presidio</th><th>Gestionale farmacia</th><th>Agenda somministrazioni</th><th>Aggiornamento</th><th>Ultimo dato</th><th>Stato</th></tr></thead><tbody><tr id="ruggi"><td><div class="drug" style="font-size:13px">Salerno</div><span class="onc-muted">AOU San Giovanni di Dio e Ruggi d’Aragona · AOU</span></td><td>Integrato (API)</td><td>Integrata</td><td>Ogni 15 min</td><td>oggi 08:40</td><td><span class="onc-badge onc-badge--surplus">Operativo</span></td></tr><tr id="tortora"><td><div class="drug" style="font-size:13px">Pagani</div><span class="onc-muted">P.O. Andrea Tortora · ASL Salerno</span></td><td>Integrato (API)</td><td>Integrata</td><td>Ogni 15 min</td><td>oggi 08:35</td><td><span class="onc-badge onc-badge--surplus">Operativo</span></td></tr><tr id="eboli"><td><div class="drug" style="font-size:13px">Eboli</div><span class="onc-muted">P.O. Maria SS. Addolorata · ASL Salerno</span></td><td>File giornaliero</td><td>Integrata</td><td>Giornaliera</td><td>oggi 06:00</td><td><span class="onc-badge onc-badge--balance">Operativo</span></td></tr><tr id="vallo"><td><div class="drug" style="font-size:13px">Vallo della Lucania</div><span class="onc-muted">P.O. San Luca · ASL Salerno</span></td><td>File giornaliero</td><td>Caricamento manuale</td><td>Giornaliera</td><td>oggi 06:00</td><td><span class="onc-badge onc-badge--balance">Operativo</span></td></tr><tr id="polla"><td><div class="drug" style="font-size:13px">Polla</div><span class="onc-muted">P.O. Luigi Curto · ASL Salerno</span></td><td>File giornaliero</td><td>In integrazione</td><td>Giornaliera</td><td>ieri 18:10</td><td><span class="onc-badge onc-badge--watch">Onboarding</span></td></tr><tr id="sapri"><td><div class="drug" style="font-size:13px">Sapri</div><span class="onc-muted">P.O. dell’Immacolata · ASL Salerno</span></td><td>Caricamento manuale</td><td>In integrazione</td><td>Settimanale</td><td>lun 21 set</td><td><span class="onc-badge onc-badge--watch">Onboarding</span></td></tr></tbody></table></div>
+</section>
+    <div class="demo">Mockup Oncoria · presidi reali della provincia di Salerno, persone inventate, quantità e movimenti simulati a scopo dimostrativo</div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script><script src="assets/js/map.js"></script>
+<script>
+(function(){
+const D=ONC, sel=document.getElementById('drugsel'), dr=Object.fromEntries(D.drugs.map(d=>[d.id,d]));
+const LBL={deficit:'Deficit',watch:'A rischio',balance:'Equilibrio',surplus:'Surplus'}, fs=OncMap.fs;
+function show(id){
+  const d=dr[id]; sel.value=id;
+  document.getElementById('m-title').textContent='Mappa della rete · '+d.name+' '+d.dose;
+  const sg=OncMap.render(document.getElementById('map-rete'),{drug:id});
+  let st=0,fb=0,rows='';
+  D.nodes.forEach(n=>{const v=D.values[n.id][id],s=v.stock-v.fabb;st+=v.stock;fb+=v.fabb;
+    rows+='<tr data-node="'+n.id+'"'+(n.id==='ruggi'?' class="is-selected"':'')+'><td><div class="drug" style="font-size:13px">'+n.town+'</div><span class="onc-muted">'+n.short+'</span><span class="onc-muted" style="display:block">'+(n.km?n.km+' km da Salerno':'il tuo presidio')+'</span></td><td class="r"><b class="'+(s<0?'neg':(v.state==='surplus'?'pos':''))+'" style="font-size:15px">'+fs(s)+'</b><span class="onc-muted" style="display:block;white-space:nowrap">'+v.stock+' / '+v.fabb+'</span></td><td><span class="onc-badge onc-badge--'+v.state+'">'+LBL[v.state]+'</span></td></tr>';});
+  document.getElementById('m-table').innerHTML='<thead><tr><th>Presidio</th><th class="r">Saldo<br><span style="font-weight:500;text-transform:none">giac. / fabb.</span></th><th>Stato</th></tr></thead><tbody>'+rows+'</tbody>';
+  const net=st-fb;
+  document.getElementById('m-sum').innerHTML='<div><span class="onc-label">Rete provinciale</span><div class="onc-kpi__value" style="font-size:28px;line-height:32px">'+st+'<small>/ '+fb+'</small></div><span class="onc-muted" style="font-size:12px">giacenza / fabbisogno 14 gg ('+d.unit+')</span></div><div><span class="onc-label">Saldo di rete</span><div class="onc-kpi__value" style="font-size:28px;line-height:32px;color:'+(net<0?'var(--deficit)':'var(--mint-ink)')+'">'+fs(net)+'</div><span class="onc-muted" style="font-size:12px">'+(net>=0?'i deficit locali sono compensabili':'serve un nuovo ordine')+'</span></div>';
+  const tr=D.transfers.filter(t=>t.drug===id&&t.status!=='received');
+  let h='';
+  sg.forEach(s=>{h+='<div class="note" style="margin-bottom:8px"><span>↗</span><span><b>Suggerito: '+s.qty+' '+(s.qty>1?d.unit:d.u1)+' da '+OncMap.byId[s.src].town+' a '+OncMap.byId[s.dst].town+'</b> · '+s.km+' km · '+s.eta+(s.alt?'. Alternativa: '+OncMap.byId[s.alt.src].town+' ('+s.alt.km+' km).':'.')+' <a href="suggerimenti.html">Apri →</a></span></div>';});
+  tr.forEach(t=>{h+='<div class="note" style="margin-bottom:8px"><span>⇄</span><span><b>'+t.id+' · '+(t.status==='transit'?'in viaggio':'riservato')+'</b>: '+t.qty+' '+d.unit+' da '+OncMap.byId[t.src].town+' a '+OncMap.byId[t.dst].town+'. <a href="trasferimenti.html#'+t.id+'">Traccia →</a></span></div>';});
+  if(!h) h='<div class="onc-hitl"><span>ⓘ</span>Nessun deficit da compensare in rete per questo farmaco nei prossimi 14 giorni.</div>';
+  document.getElementById('m-sugg').innerHTML=h;
+  document.querySelectorAll('#matrix [data-drug]').forEach(c=>c.classList.toggle('c-today',c.dataset.drug===id));
+  // evidenzia nodo <-> riga
+  const map=document.getElementById('map-rete');
+  document.querySelectorAll('#m-table tr[data-node]').forEach(r=>{
+    r.addEventListener('mouseenter',()=>{const g=map.querySelector('[data-node="'+r.dataset.node+'"]');g&&g.classList.add('hl');});
+    r.addEventListener('mouseleave',()=>map.querySelectorAll('.hl').forEach(x=>x.classList.remove('hl')));
+  });
+  map.querySelectorAll('[data-node]').forEach(g=>{
+    g.addEventListener('mouseenter',()=>{const r=document.querySelector('#m-table tr[data-node="'+g.dataset.node+'"]');r&&r.classList.add('hl');});
+    g.addEventListener('mouseleave',()=>document.querySelectorAll('#m-table .hl').forEach(x=>x.classList.remove('hl')));
+  });
+}
+sel.addEventListener('change',()=>show(sel.value));
+document.querySelectorAll('#matrix [data-drug]').forEach(c=>c.addEventListener('click',()=>{show(c.dataset.drug);window.scrollTo({top:0,behavior:'smooth'});}));
+const h=location.hash.slice(1);
+show(dr[h]?h:'tdxd');
+if(OncMap.byId[h]){const r=document.getElementById(h);r&&r.classList.add('hl');const t=document.querySelector('#m-table tr[data-node="'+h+'"]');t&&t.classList.add('hl');}
+})();
+</script>
+</body>
+</html>

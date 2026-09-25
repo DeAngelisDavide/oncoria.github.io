@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fabbisogno previsto · Oncoria</title>
+<meta name="description" content="Mockup della dashboard Oncoria per la farmacia ospedaliera: rete oncologica della provincia di Salerno (dati simulati).">
+<link rel="icon" type="image/png" href="assets/img/oncoria-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=League+Spartan:wght@600;700&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="assets/js/app.js"></script>
+</head>
+<body>
+<div class="onc app">
+  <aside class="side" aria-label="Navigazione principale">
+    <a class="brandlink" href="index.html"><img src="assets/img/oncoria-lockup-white.png" alt="Oncoria — L’efficienza che fa muovere la salute"></a>
+    <a class="nav" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="12" width="7" height="9" rx="2"/><rect x="3" y="16" width="7" height="5" rx="2"/></svg>Panoramica</a>
+<a class="nav on" href="fabbisogno.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8"/><path d="M15 8h5v5"/></svg>Fabbisogno previsto</a>
+<a class="nav" href="rete.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3z"/><path d="M9 3v15M15 6v15"/></svg>Rete presidi</a>
+<a class="nav" href="suggerimenti.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18c6 0 11-4 13-11"/><path d="M11 6h7v7"/></svg>Suggerimenti<span class="cnt">3</span></a>
+<a class="nav" href="trasferimenti.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="13" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Trasferimenti<span class="cnt">2</span></a>
+<a class="nav" href="ordini.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>Ordini</a>
+<div class="grp">Pilota</div>
+<a class="nav" href="kpi.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>KPI di validazione</a>
+<a class="nav" href="regole.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>Regole e vincoli</a>
+
+    <div class="me"><span class="av">MR</span><div><b>Dott.ssa M. Rinaldi</b><small>Farmacia ospedaliera · AOU Ruggi</small></div></div>
+  </aside>
+  <main class="main">
+    <div class="top">
+      <div><div class="onc-label">Venerdì 25 settembre 2026 · aggiornato alle 08:40</div><h1>Fabbisogno previsto</h1></div>
+      <div class="tools"><div class="seg" aria-label="Orizzonte"><button>7 gg</button><button class="on">14 gg</button><button>28 gg</button></div><span class="chip">Presidio <b>AOU Ruggi, Salerno</b></span><button class="iconbtn" id="theme" type="button" aria-label="Cambia tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button></div>
+    </div>
+<style>
+.inputs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto minmax(0,1.1fr) auto minmax(0,.9fr);grid-template-rows:auto auto;gap:10px;align-items:center}
+.inputs .in{border:1px solid var(--line);border-radius:var(--radius-md);padding:8px 10px;display:flex;flex-direction:column;gap:2px}
+.inputs .in:nth-child(-n+3){grid-row:1}.inputs .in:nth-child(n+4):nth-child(-n+6){grid-row:2}
+.inputs .in b{font-size:13px;line-height:17px}.inputs .in small{font-size:11px;color:var(--ink-muted);line-height:14px}
+.inputs .arrow{grid-row:1/3;font:700 22px var(--font-display);color:var(--mint-ink)}
+.inputs .out{grid-row:1/3;background:var(--brand-deep);color:var(--on-brand-deep);border-radius:var(--radius-md);padding:14px}
+.inputs .out b{display:block;font-family:var(--font-display);font-size:18px;line-height:22px;margin-top:4px}
+.inputs .res{grid-row:1/3;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+@media (max-width:1180px){.inputs{grid-template-columns:repeat(3,minmax(0,1fr))}.inputs .arrow,.inputs .out,.inputs .res{grid-row:auto}.inputs .arrow{display:none}.inputs .out{grid-column:1/3}}
+#d-kpis{grid-template-columns:repeat(5,minmax(0,1fr))}
+#d-kpis .onc-kpi{box-shadow:none;padding:12px}
+#d-kpis .onc-kpi__value{font-size:26px;line-height:30px}
+@media (max-width:900px){#d-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style><section class="onc-card">
+  <div class="hd"><div><h2 class="onc-card-title">Giacenza proiettata giorno per giorno</h2><div class="sub">Unità a fine giornata all’AOU Ruggi, dopo somministrazioni programmate e ordini in arrivo. Clicca una riga per il dettaglio.</div></div>
+  <div class="onc-meter__legend"><span><i style="background:var(--deficit)"></i>Sotto zero: pazienti scoperti</span><span><i style="background:var(--watch)"></i>Sotto scorta minima</span><span><i style="background:var(--mint)"></i>Coperto</span></div></div>
+  <div class="scroll"><table class="onc-table heat"><thead><tr><th style="min-width:150px">Farmaco</th><th class="c-today">ven<br>25</th><th class="">sab<br>26</th><th class="">dom<br>27</th><th class="">lun<br>28</th><th class="">mar<br>29</th><th class="">mer<br>30</th><th class="">gio<br>1</th><th class="">ven<br>2</th><th class="">sab<br>3</th><th class="">dom<br>4</th><th class="">lun<br>5</th><th class="">mar<br>6</th><th class="">mer<br>7</th><th class="">gio<br>8</th></tr></thead><tbody><tr data-drug="tdxd" style="cursor:pointer"><td><div class="drug" style="font-size:13px">Trastuzumab deruxtecan</div><span class="onc-muted">100 mg</span></td><td class="cell c-surplus" title="Trastuzumab deruxtecan · 25 set: 10 fiale a fine giornata">10</td><td class="cell c-surplus" title="Trastuzumab deruxtecan · 26 set: 10 fiale a fine giornata">10</td><td class="cell c-surplus" title="Trastuzumab deruxtecan · 27 set: 10 fiale a fine giornata">10</td><td class="cell c-surplus" title="Trastuzumab deruxtecan · 28 set: 6 fiale a fine giornata">6</td><td class="cell c-deficit" title="Trastuzumab deruxtecan · 29 set: -2 fiale a fine giornata">−2</td><td class="cell c-surplus" title="Trastuzumab deruxtecan · 30 set: 6 fiale a fine giornata">6</td><td class="cell c-surplus" title="Trastuzumab deruxtecan · 1 ott: 6 fiale a fine giornata">6</td><td class="cell c-surplus" title="Trastuzumab deruxtecan · 2 ott: 6 fiale a fine giornata">6</td><td class="cell c-surplus" title="Trastuzumab deruxtecan · 3 ott: 6 fiale a fine giornata">6</td><td class="cell c-surplus" title="Trastuzumab deruxtecan · 4 ott: 6 fiale a fine giornata">6</td><td class="cell c-surplus" title="Trastuzumab deruxtecan · 5 ott: 6 fiale a fine giornata">6</td><td class="cell c-surplus" title="Trastuzumab deruxtecan · 6 ott: 6 fiale a fine giornata">6</td><td class="cell c-surplus" title="Trastuzumab deruxtecan · 7 ott: 6 fiale a fine giornata">6</td><td class="cell c-surplus" title="Trastuzumab deruxtecan · 8 ott: 6 fiale a fine giornata">6</td></tr><tr data-drug="pembro" style="cursor:pointer"><td><div class="drug" style="font-size:13px">Pembrolizumab</div><span class="onc-muted">100 mg</span></td><td class="cell c-surplus" title="Pembrolizumab · 25 set: 4 fiale a fine giornata">4</td><td class="cell c-surplus" title="Pembrolizumab · 26 set: 4 fiale a fine giornata">4</td><td class="cell c-surplus" title="Pembrolizumab · 27 set: 4 fiale a fine giornata">4</td><td class="cell c-surplus" title="Pembrolizumab · 28 set: 2 fiale a fine giornata">2</td><td class="cell c-watch" title="Pembrolizumab · 29 set: 0 fiale a fine giornata">0</td><td class="cell c-deficit" title="Pembrolizumab · 30 set: -2 fiale a fine giornata">−2</td><td class="cell c-deficit" title="Pembrolizumab · 1 ott: -2 fiale a fine giornata">−2</td><td class="cell c-deficit" title="Pembrolizumab · 2 ott: -2 fiale a fine giornata">−2</td><td class="cell c-deficit" title="Pembrolizumab · 3 ott: -2 fiale a fine giornata">−2</td><td class="cell c-deficit" title="Pembrolizumab · 4 ott: -2 fiale a fine giornata">−2</td><td class="cell c-deficit" title="Pembrolizumab · 5 ott: -2 fiale a fine giornata">−2</td><td class="cell c-deficit" title="Pembrolizumab · 6 ott: -2 fiale a fine giornata">−2</td><td class="cell c-deficit" title="Pembrolizumab · 7 ott: -2 fiale a fine giornata">−2</td><td class="cell c-deficit" title="Pembrolizumab · 8 ott: -2 fiale a fine giornata">−2</td></tr><tr data-drug="trast" style="cursor:pointer"><td><div class="drug" style="font-size:13px">Trastuzumab s.c.</div><span class="onc-muted">600 mg</span></td><td class="cell c-surplus" title="Trastuzumab s.c. · 25 set: 12 flaconi a fine giornata">12</td><td class="cell c-surplus" title="Trastuzumab s.c. · 26 set: 12 flaconi a fine giornata">12</td><td class="cell c-surplus" title="Trastuzumab s.c. · 27 set: 12 flaconi a fine giornata">12</td><td class="cell c-surplus" title="Trastuzumab s.c. · 28 set: 11 flaconi a fine giornata">11</td><td class="cell c-surplus" title="Trastuzumab s.c. · 29 set: 9 flaconi a fine giornata">9</td><td class="cell c-surplus" title="Trastuzumab s.c. · 30 set: 8 flaconi a fine giornata">8</td><td class="cell c-surplus" title="Trastuzumab s.c. · 1 ott: 7 flaconi a fine giornata">7</td><td class="cell c-surplus" title="Trastuzumab s.c. · 2 ott: 6 flaconi a fine giornata">6</td><td class="cell c-surplus" title="Trastuzumab s.c. · 3 ott: 6 flaconi a fine giornata">6</td><td class="cell c-surplus" title="Trastuzumab s.c. · 4 ott: 6 flaconi a fine giornata">6</td><td class="cell c-surplus" title="Trastuzumab s.c. · 5 ott: 4 flaconi a fine giornata">4</td><td class="cell c-surplus" title="Trastuzumab s.c. · 6 ott: 3 flaconi a fine giornata">3</td><td class="cell c-surplus" title="Trastuzumab s.c. · 7 ott: 2 flaconi a fine giornata">2</td><td class="cell c-watch" title="Trastuzumab s.c. · 8 ott: 1 flaconi a fine giornata">1</td></tr><tr data-drug="palbo" style="cursor:pointer"><td><div class="drug" style="font-size:13px">Palbociclib</div><span class="onc-muted">125 mg</span></td><td class="cell c-surplus" title="Palbociclib · 25 set: 20 conf. a fine giornata">20</td><td class="cell c-surplus" title="Palbociclib · 26 set: 20 conf. a fine giornata">20</td><td class="cell c-surplus" title="Palbociclib · 27 set: 20 conf. a fine giornata">20</td><td class="cell c-surplus" title="Palbociclib · 28 set: 18 conf. a fine giornata">18</td><td class="cell c-surplus" title="Palbociclib · 29 set: 16 conf. a fine giornata">16</td><td class="cell c-surplus" title="Palbociclib · 30 set: 14 conf. a fine giornata">14</td><td class="cell c-surplus" title="Palbociclib · 1 ott: 12 conf. a fine giornata">12</td><td class="cell c-surplus" title="Palbociclib · 2 ott: 10 conf. a fine giornata">10</td><td class="cell c-surplus" title="Palbociclib · 3 ott: 10 conf. a fine giornata">10</td><td class="cell c-surplus" title="Palbociclib · 4 ott: 10 conf. a fine giornata">10</td><td class="cell c-surplus" title="Palbociclib · 5 ott: 8 conf. a fine giornata">8</td><td class="cell c-surplus" title="Palbociclib · 6 ott: 6 conf. a fine giornata">6</td><td class="cell c-surplus" title="Palbociclib · 7 ott: 4 conf. a fine giornata">4</td><td class="cell c-surplus" title="Palbociclib · 8 ott: 2 conf. a fine giornata">2</td></tr><tr data-drug="pertu" style="cursor:pointer"><td><div class="drug" style="font-size:13px">Pertuzumab</div><span class="onc-muted">420 mg</span></td><td class="cell c-surplus" title="Pertuzumab · 25 set: 8 fiale a fine giornata">8</td><td class="cell c-surplus" title="Pertuzumab · 26 set: 8 fiale a fine giornata">8</td><td class="cell c-surplus" title="Pertuzumab · 27 set: 8 fiale a fine giornata">8</td><td class="cell c-surplus" title="Pertuzumab · 28 set: 8 fiale a fine giornata">8</td><td class="cell c-surplus" title="Pertuzumab · 29 set: 7 fiale a fine giornata">7</td><td class="cell c-surplus" title="Pertuzumab · 30 set: 7 fiale a fine giornata">7</td><td class="cell c-surplus" title="Pertuzumab · 1 ott: 6 fiale a fine giornata">6</td><td class="cell c-surplus" title="Pertuzumab · 2 ott: 6 fiale a fine giornata">6</td><td class="cell c-surplus" title="Pertuzumab · 3 ott: 6 fiale a fine giornata">6</td><td class="cell c-surplus" title="Pertuzumab · 4 ott: 6 fiale a fine giornata">6</td><td class="cell c-surplus" title="Pertuzumab · 5 ott: 6 fiale a fine giornata">6</td><td class="cell c-surplus" title="Pertuzumab · 6 ott: 4 fiale a fine giornata">4</td><td class="cell c-surplus" title="Pertuzumab · 7 ott: 4 fiale a fine giornata">4</td><td class="cell c-surplus" title="Pertuzumab · 8 ott: 4 fiale a fine giornata">4</td></tr><tr data-drug="sacit" style="cursor:pointer"><td><div class="drug" style="font-size:13px">Sacituzumab govitecan</div><span class="onc-muted">180 mg</span></td><td class="cell c-surplus" title="Sacituzumab govitecan · 25 set: 5 fiale a fine giornata">5</td><td class="cell c-surplus" title="Sacituzumab govitecan · 26 set: 5 fiale a fine giornata">5</td><td class="cell c-surplus" title="Sacituzumab govitecan · 27 set: 5 fiale a fine giornata">5</td><td class="cell c-surplus" title="Sacituzumab govitecan · 28 set: 4 fiale a fine giornata">4</td><td class="cell c-surplus" title="Sacituzumab govitecan · 29 set: 4 fiale a fine giornata">4</td><td class="cell c-surplus" title="Sacituzumab govitecan · 30 set: 4 fiale a fine giornata">4</td><td class="cell c-surplus" title="Sacituzumab govitecan · 1 ott: 4 fiale a fine giornata">4</td><td class="cell c-surplus" title="Sacituzumab govitecan · 2 ott: 3 fiale a fine giornata">3</td><td class="cell c-surplus" title="Sacituzumab govitecan · 3 ott: 3 fiale a fine giornata">3</td><td class="cell c-surplus" title="Sacituzumab govitecan · 4 ott: 3 fiale a fine giornata">3</td><td class="cell c-surplus" title="Sacituzumab govitecan · 5 ott: 2 fiale a fine giornata">2</td><td class="cell c-surplus" title="Sacituzumab govitecan · 6 ott: 2 fiale a fine giornata">2</td><td class="cell c-surplus" title="Sacituzumab govitecan · 7 ott: 2 fiale a fine giornata">2</td><td class="cell c-surplus" title="Sacituzumab govitecan · 8 ott: 2 fiale a fine giornata">2</td></tr></tbody></table></div>
+</section>
+<div class="grid side-l">
+  <section class="onc-card" style="padding:8px">
+    <div class="onc-label" style="padding:10px 12px 6px">Farmaci nel perimetro</div>
+    <div class="list" id="druglist"><a class="li" href="#tdxd" data-drug="tdxd"><div class="grow"><b>Trastuzumab deruxtecan</b><small>100 mg · giacenza 10 · fabb. 12</small></div><span class="onc-badge onc-badge--deficit">−2</span></a><a class="li" href="#pembro" data-drug="pembro"><div class="grow"><b>Pembrolizumab</b><small>100 mg · giacenza 6 · fabb. 8</small></div><span class="onc-badge onc-badge--deficit">−2</span></a><a class="li" href="#trast" data-drug="trast"><div class="grow"><b>Trastuzumab s.c.</b><small>600 mg · giacenza 14 · fabb. 13</small></div><span class="onc-badge onc-badge--watch">+1</span></a><a class="li" href="#palbo" data-drug="palbo"><div class="grow"><b>Palbociclib</b><small>125 mg · giacenza 22 · fabb. 20</small></div><span class="onc-badge onc-badge--surplus">+2</span></a><a class="li" href="#pertu" data-drug="pertu"><div class="grow"><b>Pertuzumab</b><small>420 mg · giacenza 8 · fabb. 4</small></div><span class="onc-badge onc-badge--surplus">+4</span></a><a class="li" href="#sacit" data-drug="sacit"><div class="grow"><b>Sacituzumab govitecan</b><small>180 mg · giacenza 5 · fabb. 3</small></div><span class="onc-badge onc-badge--surplus">+2</span></a></div>
+  </section>
+  <div class="col">
+    <section class="onc-card">
+      <div class="hd"><div><div class="onc-label" id="d-form"></div><h2 class="onc-card-title" id="d-name" style="font-size:24px;line-height:30px"></h2><div class="sub" id="d-schema"></div></div><div id="d-badge"></div></div>
+      <div class="kpis" id="d-kpis" style="margin-bottom:16px"></div>
+      <div id="d-chart"></div>
+      <div class="note" id="d-note" style="margin-top:14px"></div>
+    </section>
+    <section class="onc-card">
+      <div class="hd"><div><h2 class="onc-card-title">Da dove nasce la previsione</h2><div class="sub">Oncoria combina dati operativi del presidio e dati clinico-organizzativi; il contesto nazionale (OsMed, AIRTUM) orienta i trend ma non sostituisce i dati del presidio.</div></div></div>
+      <div class="inputs">
+        <div class="in"><span class="onc-label">Operativi</span><b>Giacenza e lotti</b><small>Gestionale di farmacia</small></div>
+        <div class="in"><span class="onc-label">Operativi</span><b>Ordini in arrivo</b><small>Lead time per fornitore</small></div>
+        <div class="in"><span class="onc-label">Operativi</span><b>Consumi storici</b><small>Ultimi 12 mesi</small></div>
+        <div class="in"><span class="onc-label">Clinico-org.</span><b>Pazienti programmati</b><small>Agenda Day Hospital</small></div>
+        <div class="in"><span class="onc-label">Clinico-org.</span><b>Piani terapeutici</b><small>Schema e ciclo</small></div>
+        <div class="in"><span class="onc-label">Clinico-org.</span><b>Calendario sedute</b><small>Date previste</small></div>
+        <div class="arrow">→</div>
+        <div class="out"><span class="onc-label" style="color:var(--on-brand-deep);opacity:.75">Fabbisogno previsto</span><b id="d-out">12 fiale in 14 giorni</b></div>
+        <div class="arrow">→</div>
+        <div class="res"><span class="onc-badge onc-badge--deficit">Deficit</span><span class="onc-badge onc-badge--balance">Equilibrio</span><span class="onc-badge onc-badge--surplus">Surplus</span></div>
+      </div>
+    </section>
+    <section class="onc-card">
+      <div class="hd"><div><h2 class="onc-card-title">Somministrazioni programmate · 14 giorni</h2><div class="sub">Pazienti pseudonimizzati: Oncoria usa solo codice, data e fabbisogno. La priorità clinica resta agli oncologi.</div></div></div>
+      <div class="scroll"><table class="onc-table" id="d-adm"></table></div>
+    </section>
+  </div>
+</div>
+    <div class="demo">Mockup Oncoria · presidi reali della provincia di Salerno, persone inventate, quantità e movimenti simulati a scopo dimostrativo</div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script><script src="assets/js/sched.js"></script><script src="assets/js/charts.js"></script>
+<script>
+(function(){
+const D=ONC, S=ONC_SCHED, dr=Object.fromEntries(D.drugs.map(d=>[d.id,d]));
+const LBL={deficit:'Deficit',watch:'A rischio',balance:'Equilibrio',surplus:'Surplus'};
+const fs=v=>v===0?'0':(v>0?'+'+v:'−'+(-v));
+const slots=['08:30','09:00','09:30','10:30','11:00','11:30','12:00'];
+function code(d,i,j){let h=0;const s=d+i+'-'+j;for(const c of s)h=(h*31+c.charCodeAt(0))>>>0;return 'PZ-'+h.toString(16).toUpperCase().slice(-4);}
+function show(id){
+  if(!dr[id])id='tdxd';
+  const d=dr[id], v=D.values.ruggi[id], sc=S.sched[id], sal=v.stock-v.fabb;
+  document.querySelectorAll('#druglist .li').forEach(a=>a.classList.toggle('on',a.dataset.drug===id));
+  document.querySelectorAll('.heat tr[data-drug]').forEach(r=>r.classList.toggle('hl',r.dataset.drug===id));
+  document.getElementById('d-form').textContent=d.dose+' · '+d.form;
+  document.getElementById('d-name').textContent=d.name;
+  document.getElementById('d-schema').textContent='Schema di riferimento: '+sc.schema+' · scorta minima '+sc.min+' '+(sc.min>1?d.unit:d.u1);
+  document.getElementById('d-badge').innerHTML='<span class="onc-badge onc-badge--'+v.state+'">'+LBL[v.state]+'</span>';
+  const pr=OncChart.series(id,false); const first=pr.findIndex(x=>x<0); const low=pr.findIndex(x=>x<sc.min);
+  const committed=Object.values(sc.adm).reduce((a,b)=>a+b,0);
+  const crit=first>=0?S.dates[first]:(low>=0?S.dates[low]+' (scorta min.)':'nessuno');
+  document.getElementById('d-kpis').innerHTML=[
+    ['Giacenza oggi',v.stock,d.unit],['Fabbisogno 14 gg',committed,d.unit],['Saldo 14 gg',fs(sal),'',sal<0?'deficit':(v.state==='surplus'?'surplus':'')],
+    ['Giorno critico',crit,'',first>=0?'deficit':''],['Lead time ordine',sc.lead,'giorni']
+  ].map(k=>'<div class="onc-kpi'+(k[3]?' onc-kpi--'+k[3]:'')+'"><span class="onc-label">'+k[0]+'</span><span class="onc-kpi__value" style="'+(String(k[1]).length>6?'font-size:18px;line-height:30px':'')+'">'+k[1]+(k[2]?'<small>'+k[2]+'</small>':'')+'</span></div>').join('');
+  OncChart.proj(document.getElementById('d-chart'),id,{w:760,h:270});
+  document.getElementById('d-out').textContent=committed+' '+d.unit+' in 14 giorni';
+  let note;
+  if(first>=0&&sc.realloc) note='<span>ⓘ</span><span><b>Deficit il '+S.dates[first]+'.</b> Il primo ordine utile arriva '+(Object.keys(sc.orders).length?'il '+S.dates[+Object.keys(sc.orders)[0]]:'tra '+sc.lead+' giorni')+': troppo tardi. Con '+sc.realloc.qty+' '+d.unit+' da '+sc.realloc.from+' la giacenza resta sopra zero. <a href="suggerimenti.html">Vai ai suggerimenti →</a></span>';
+  else if(low>=0) note='<span>ⓘ</span><span><b>Sotto scorta minima dal '+S.dates[low]+'.</b> Nessun paziente scoperto nell’orizzonte: conviene pianificare il riordino (lead time '+sc.lead+' giorni). <a href="ordini.html">Vai agli ordini →</a></span>';
+  else note='<span>ⓘ</span><span><b>Coperto per 14 giorni.</b> Il surplus di '+Math.max(0,sal)+' '+d.unit+' è disponibile per la rete senza intaccare i pazienti programmati.</span>';
+  document.getElementById('d-note').innerHTML=note;
+  // somministrazioni
+  let s=S.stock[id], sr=S.stock[id], rows='';
+  for(let day=0;day<14;day++){
+    s+=(sc.orders[day]||0); sr+=(sc.orders[day]||0)+(sc.realloc&&sc.realloc.day===day?sc.realloc.qty:0);
+    const u=sc.adm[day]||0; if(!u)continue; const n=Math.max(1,Math.round(u/sc.pp));
+    for(let j=0;j<n;j++){
+      const q=j<n-1?sc.pp:u-sc.pp*(n-1); s-=q; sr-=q;
+      const cov=s>=0?'<span class="onc-badge onc-badge--surplus">Coperta</span>':(sr>=0?'<span class="onc-badge onc-badge--watch">Coperta solo con riallocazione</span>':'<span class="onc-badge onc-badge--deficit">Scoperta</span>');
+      rows+='<tr><td><b>'+S.days[day]+'</b> '+S.dates[day].split(' ')[1]+'</td><td>'+slots[(day+j)%slots.length]+'</td><td class="num">'+code(id,day,j)+'</td><td>DH Oncologico</td><td class="r">'+q+' '+(q>1?d.unit:d.u1)+'</td><td>'+(day<=5?'Confermata':'Da confermare')+'</td><td>'+cov+'</td></tr>';
+    }
+  }
+  document.getElementById('d-adm').innerHTML='<thead><tr><th>Giorno</th><th>Ora</th><th>Paziente</th><th>Reparto</th><th class="r">Unità</th><th>Seduta</th><th>Copertura</th></tr></thead><tbody>'+rows+'</tbody>';
+}
+document.querySelectorAll('.heat tr[data-drug]').forEach(r=>r.addEventListener('click',()=>{location.hash=r.dataset.drug;}));
+window.addEventListener('hashchange',()=>show(location.hash.slice(1)));
+show(location.hash.slice(1));
+})();
+</script>
+</body>
+</html>

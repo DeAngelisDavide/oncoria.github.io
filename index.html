@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panoramica · Oncoria</title>
+<meta name="description" content="Mockup della dashboard Oncoria per la farmacia ospedaliera: rete oncologica della provincia di Salerno (dati simulati).">
+<link rel="icon" type="image/png" href="assets/img/oncoria-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=League+Spartan:wght@600;700&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="assets/js/app.js"></script>
+</head>
+<body>
+<div class="onc app">
+  <aside class="side" aria-label="Navigazione principale">
+    <a class="brandlink" href="index.html"><img src="assets/img/oncoria-lockup-white.png" alt="Oncoria — L’efficienza che fa muovere la salute"></a>
+    <a class="nav on" href="index.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="12" width="7" height="9" rx="2"/><rect x="3" y="16" width="7" height="5" rx="2"/></svg>Panoramica</a>
+<a class="nav" href="fabbisogno.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8"/><path d="M15 8h5v5"/></svg>Fabbisogno previsto</a>
+<a class="nav" href="rete.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3z"/><path d="M9 3v15M15 6v15"/></svg>Rete presidi</a>
+<a class="nav" href="suggerimenti.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18c6 0 11-4 13-11"/><path d="M11 6h7v7"/></svg>Suggerimenti<span class="cnt">3</span></a>
+<a class="nav" href="trasferimenti.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="13" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Trasferimenti<span class="cnt">2</span></a>
+<a class="nav" href="ordini.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>Ordini</a>
+<div class="grp">Pilota</div>
+<a class="nav" href="kpi.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>KPI di validazione</a>
+<a class="nav" href="regole.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>Regole e vincoli</a>
+
+    <div class="me"><span class="av">MR</span><div><b>Dott.ssa M. Rinaldi</b><small>Farmacia ospedaliera · AOU Ruggi</small></div></div>
+  </aside>
+  <main class="main">
+    <div class="top">
+      <div><div class="onc-label">Venerdì 25 settembre 2026 · aggiornato alle 08:40</div><h1>Panoramica · AOU Ruggi</h1></div>
+      <div class="tools"><span class="chip">Perimetro <b>Breast cancer</b></span><span class="chip">Orizzonte <b>14 giorni</b></span><span class="chip">Rete <b>6 presidi · Provincia di Salerno</b></span><button class="iconbtn" id="theme" type="button" aria-label="Cambia tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button></div>
+    </div>
+<div class="kpis">
+  <a class="onc-kpi" href="fabbisogno.html"><span class="onc-label">Farmaci monitorati</span><span class="onc-kpi__value">6</span><span class="onc-kpi__foot">Perimetro pilota breast cancer</span></a>
+  <a class="onc-kpi onc-kpi--deficit" href="fabbisogno.html"><span class="onc-label">A rischio stock-out · 14 gg</span><span class="onc-kpi__value">3</span><span class="onc-kpi__foot">Primo deficit: martedì 29 set</span></a>
+  <a class="onc-kpi onc-kpi--surplus" href="rete.html"><span class="onc-label">Unità riallocabili in rete</span><span class="onc-kpi__value">18</span><span class="onc-kpi__foot">Su 6 presidi, senza creare deficit nei cedenti</span></a>
+  <a class="onc-kpi" href="kpi.html"><span class="onc-label">Valore in scadenza · 60 gg</span><span class="onc-kpi__value">€ 48,2<small>k</small></span><span class="onc-kpi__foot">4 lotti, 2 riallocabili</span></a>
+</div>
+<section class="onc-card mapcard">
+  <div class="hd"><div><h2 class="onc-card-title">Mappa della rete · Provincia di Salerno</h2><div class="sub">Trastuzumab deruxtecan 100 mg · saldo a 14 giorni: dimensione = giacenza, colore = stato, frecce = movimenti suggeriti e in corso</div></div><a class="onc-btn onc-btn--sm" style="text-decoration:none" href="rete.html">Apri la rete →</a></div>
+  <div class="mapwrap">
+    <div class="mapbox" id="map-home"></div>
+    <div class="mapside">
+      <div class="netsum">
+        <div><span class="onc-label">Rete provinciale</span><div class="onc-kpi__value" style="font-size:28px;line-height:32px">30<small>/ 27</small></div><span class="onc-muted" style="font-size:12px">giacenza / fabbisogno 14 gg</span></div>
+        <div><span class="onc-label">Saldo di rete</span><div class="onc-kpi__value" style="font-size:28px;line-height:32px;color:var(--mint-ink)">+3</div><span class="onc-muted" style="font-size:12px">il deficit di Salerno è coperto</span></div>
+      </div>
+      <div class="scroll"><table class="onc-table"><thead><tr><th>Presidio</th><th class="r">Saldo<br><span style="font-weight:500;text-transform:none">giac. / fabb.</span></th><th>Stato</th></tr></thead><tbody><tr class="is-selected" data-href="rete.html#ruggi"><td><div class="drug" style="font-size:13px">Salerno</div><span class="onc-muted">AOU Ruggi d’Aragona</span><span class="onc-muted" style="display:block">il tuo presidio</span></td><td class="r"><b class="neg" style="font-size:15px">−2</b><span class="onc-muted" style="display:block;white-space:nowrap">10 / 12</span></td><td><span class="onc-badge onc-badge--deficit">Deficit</span></td></tr><tr data-href="rete.html#tortora"><td><div class="drug" style="font-size:13px">Pagani</div><span class="onc-muted">P.O. Andrea Tortora</span><span class="onc-muted" style="display:block">22 km da Salerno</span></td><td class="r"><b class="pos" style="font-size:15px">+4</b><span class="onc-muted" style="display:block;white-space:nowrap">8 / 4</span></td><td><span class="onc-badge onc-badge--surplus">Surplus</span></td></tr><tr data-href="rete.html#eboli"><td><div class="drug" style="font-size:13px">Eboli</div><span class="onc-muted">P.O. Maria SS. Addolorata</span><span class="onc-muted" style="display:block">30 km da Salerno</span></td><td class="r"><b class="" style="font-size:15px">0</b><span class="onc-muted" style="display:block;white-space:nowrap">3 / 3</span></td><td><span class="onc-badge onc-badge--balance">Equilibrio</span></td></tr><tr data-href="rete.html#vallo"><td><div class="drug" style="font-size:13px">Vallo della Lucania</div><span class="onc-muted">P.O. San Luca</span><span class="onc-muted" style="display:block">95 km da Salerno</span></td><td class="r"><b class="pos" style="font-size:15px">+2</b><span class="onc-muted" style="display:block;white-space:nowrap">5 / 3</span></td><td><span class="onc-badge onc-badge--surplus">Surplus</span></td></tr><tr data-href="rete.html#polla"><td><div class="drug" style="font-size:13px">Polla</div><span class="onc-muted">P.O. Luigi Curto</span><span class="onc-muted" style="display:block">100 km da Salerno</span></td><td class="r"><b class="neg" style="font-size:15px">−1</b><span class="onc-muted" style="display:block;white-space:nowrap">2 / 3</span></td><td><span class="onc-badge onc-badge--watch">A rischio</span></td></tr><tr data-href="rete.html#sapri"><td><div class="drug" style="font-size:13px">Sapri</div><span class="onc-muted">P.O. dell’Immacolata</span><span class="onc-muted" style="display:block">150 km da Salerno</span></td><td class="r"><b class="" style="font-size:15px">0</b><span class="onc-muted" style="display:block;white-space:nowrap">2 / 2</span></td><td><span class="onc-badge onc-badge--balance">Equilibrio</span></td></tr></tbody></table></div>
+      <div class="onc-hitl"><span>ⓘ</span>Oncoria propone il cedente più vicino che resta in equilibrio dopo la cessione. Vallo della Lucania resta un’alternativa, più lontana.</div>
+    </div>
+  </div>
+</section>
+<div class="grid main2">
+  <div class="col">
+    <section class="onc-card">
+      <div class="hd"><div><h2 class="onc-card-title">Fabbisogno previsto · AOU Ruggi</h2><div class="sub">Giacenza, quota impegnata dai pazienti programmati e saldo a 14 giorni. Clicca un farmaco per il dettaglio.</div></div><a class="onc-btn onc-btn--sm" style="text-decoration:none" href="fabbisogno.html">Dettaglio →</a></div>
+      <div class="scroll"><table class="onc-table">
+<thead><tr><th>Farmaco</th><th class="r">Giacenza</th><th class="r">Fabbisogno 14 gg</th><th style="width:100px">Copertura</th><th class="r">Saldo</th><th>Stato</th><th class="r">Lead time</th></tr></thead>
+<tbody><tr class="is-selected" data-href="fabbisogno.html#tdxd"><td><div class="drug">Trastuzumab deruxtecan</div><span class="onc-muted">100 mg · fiala · 2–8 °C</span></td><td class="r">10</td><td class="r">12</td><td><div class="onc-meter__bar"><div class="onc-meter__seg onc-meter__seg--committed" style="flex:10"></div><div class="onc-meter__seg onc-meter__seg--gap" style="flex:2"></div></div></td><td class="r neg">−2</td><td><span class="onc-badge onc-badge--deficit">Deficit</span></td><td class="r">5 gg</td></tr>
+<tr data-href="fabbisogno.html#pembro"><td><div class="drug">Pembrolizumab</div><span class="onc-muted">100 mg · fiala · 2–8 °C</span></td><td class="r">6</td><td class="r">8</td><td><div class="onc-meter__bar"><div class="onc-meter__seg onc-meter__seg--committed" style="flex:6"></div><div class="onc-meter__seg onc-meter__seg--gap" style="flex:2"></div></div></td><td class="r neg">−2</td><td><span class="onc-badge onc-badge--deficit">Deficit</span></td><td class="r">5 gg</td></tr>
+<tr data-href="fabbisogno.html#trast"><td><div class="drug">Trastuzumab s.c.</div><span class="onc-muted">600 mg · flacone · 2–8 °C</span></td><td class="r">14</td><td class="r">13</td><td><div class="onc-meter__bar"><div class="onc-meter__seg onc-meter__seg--committed" style="flex:13"></div><div class="onc-meter__seg onc-meter__seg--free" style="flex:1"></div></div></td><td class="r ">+1</td><td><span class="onc-badge onc-badge--watch">A rischio</span></td><td class="r">4 gg</td></tr>
+<tr data-href="fabbisogno.html#palbo"><td><div class="drug">Palbociclib</div><span class="onc-muted">125 mg · conf. 21 cps</span></td><td class="r">22</td><td class="r">20</td><td><div class="onc-meter__bar"><div class="onc-meter__seg onc-meter__seg--committed" style="flex:20"></div><div class="onc-meter__seg onc-meter__seg--free" style="flex:2"></div></div></td><td class="r pos">+2</td><td><span class="onc-badge onc-badge--surplus">Surplus</span></td><td class="r">2 gg</td></tr>
+<tr data-href="fabbisogno.html#pertu"><td><div class="drug">Pertuzumab</div><span class="onc-muted">420 mg · fiala · 2–8 °C</span></td><td class="r">8</td><td class="r">4</td><td><div class="onc-meter__bar"><div class="onc-meter__seg onc-meter__seg--committed" style="flex:4"></div><div class="onc-meter__seg onc-meter__seg--free" style="flex:4"></div></div></td><td class="r pos">+4</td><td><span class="onc-badge onc-badge--surplus">Surplus</span></td><td class="r">4 gg</td></tr>
+<tr data-href="fabbisogno.html#sacit"><td><div class="drug">Sacituzumab govitecan</div><span class="onc-muted">180 mg · fiala · 2–8 °C</span></td><td class="r">5</td><td class="r">3</td><td><div class="onc-meter__bar"><div class="onc-meter__seg onc-meter__seg--committed" style="flex:3"></div><div class="onc-meter__seg onc-meter__seg--free" style="flex:2"></div></div></td><td class="r pos">+2</td><td><span class="onc-badge onc-badge--surplus">Surplus</span></td><td class="r">6 gg</td></tr>
+</tbody></table>
+<div class="onc-meter__legend" style="margin-top:12px"><span><i style="background:var(--brand)"></i>Impegnato per pazienti programmati</span><span><i style="background:var(--mint)"></i>Libero / riallocabile</span><span><i style="background:var(--deficit)"></i>Mancante</span></div></div>
+    </section>
+    <section class="onc-card">
+      <div class="hd"><div><h2 class="onc-card-title">Giacenza proiettata</h2><div class="sub">Trastuzumab deruxtecan 100 mg · AOU Ruggi, Salerno · fine giornata</div></div></div>
+      <div id="chart-home"></div>
+    </section>
+  </div>
+  <div class="col">
+    <div class="onc-suggest">
+  <div class="onc-suggest__head"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2.4" stroke-linecap="round"><path d="M4 18c6 0 11-4 13-11"/><path d="M11 6h7v7"/></svg><b>Suggerimento di riallocazione</b><span class="onc-badge" style="margin-left:auto;background:var(--mint);color:#0a1850">Nuovo</span></div>
+  <div class="onc-suggest__body">
+    <div><div class="onc-label">S-0231 · Farmaco</div><div style="font-weight:600;font-size:16px">Trastuzumab deruxtecan 100 mg</div><div class="onc-muted" style="font-size:13px">Mancano 2 fiale per le somministrazioni di martedì 29 settembre</div></div>
+    <div class="onc-route"><div class="onc-route__node"><b>P.O. Andrea Tortora</b><span>Pagani · stock 8 · fabb. 4</span></div><div class="onc-route__arrow">2 fiale<svg width="40" height="10" viewBox="0 0 40 10"><path d="M0 5h36M31 1l5 4-5 4" stroke="currentColor" stroke-width="2" fill="none"/></svg></div><div class="onc-route__node"><b>AOU Ruggi</b><span>Salerno · stock 10 · fabb. 12</span></div></div>
+    <div class="onc-compare"><div class="is-late"><span class="onc-label">Nuovo ordine</span><b>5 giorni</b><span class="onc-muted" style="font-size:12px">Arrivo mer 30 set · dopo il bisogno</span></div><div class="is-best"><span class="onc-label">Rete</span><b>~2 h 30</b><span class="onc-muted" style="font-size:12px">22 km · catena del freddo 2–8 °C</span></div></div>
+    <div class="onc-meter"><div style="display:flex;justify-content:space-between;font-size:13px"><b>Pagani dopo la cessione</b><span class="onc-muted">6 = 4 impegnate + 2</span></div><div class="onc-meter__bar"><div class="onc-meter__seg onc-meter__seg--committed" style="flex:4"></div><div class="onc-meter__seg onc-meter__seg--free" style="flex:2"></div></div></div>
+    <div style="display:flex;gap:8px"><a class="onc-btn onc-btn--primary" style="flex:1;text-decoration:none" href="suggerimenti.html#S-0231">Valuta e avvia richiesta</a><a class="onc-btn" style="text-decoration:none" href="ordini.html">Ordini</a></div>
+    <div class="onc-hitl"><span>ⓘ</span>Pagani conserva il margine per i propri pazienti. Trasferimento tra aziende (ASL Salerno → AOU Ruggi): la decisione finale resta ai farmacisti.</div>
+  </div>
+</div>
+    <section class="onc-card"><div class="hd" style="margin-bottom:0"><h2 class="onc-card-title">Trasferimenti attivi</h2><a class="sub" href="trasferimenti.html">Vedi tutti →</a></div><a class="tr" href="trasferimenti.html#TR-0142"><div class="t"><div><b>TR-0142 · Pertuzumab 420 mg</b><div class="onc-muted">Ruggi → Eboli · 2 fiale · lotto P2291</div></div><span class="onc-badge onc-badge--brand">In viaggio</span></div><div class="onc-track"><div class="onc-track__step is-done"><span class="onc-track__dot"></span></div><div class="onc-track__step is-done"><span class="onc-track__dot"></span></div><div class="onc-track__step is-now"><span class="onc-track__dot"></span></div><div class="onc-track__step "><span class="onc-track__dot"></span></div><div class="onc-track__step "><span class="onc-track__dot"></span></div></div></a><a class="tr" href="trasferimenti.html#TR-0144"><div class="t"><div><b>TR-0144 · Pembrolizumab 100 mg</b><div class="onc-muted">Vallo della Lucania → Ruggi · 2 fiale · lotto K5530</div></div><span class="onc-badge onc-badge--watch">Riservato</span></div><div class="onc-track"><div class="onc-track__step is-done"><span class="onc-track__dot"></span></div><div class="onc-track__step is-now"><span class="onc-track__dot"></span></div><div class="onc-track__step "><span class="onc-track__dot"></span></div><div class="onc-track__step "><span class="onc-track__dot"></span></div><div class="onc-track__step "><span class="onc-track__dot"></span></div></div></a><a class="tr" href="trasferimenti.html#TR-0139"><div class="t"><div><b>TR-0139 · Sacituzumab 180 mg</b><div class="onc-muted">Ruggi → Polla · 1 fiala · lotto S0874</div></div><span class="onc-badge onc-badge--surplus">Ricevuto</span></div><div class="onc-track"><div class="onc-track__step is-done"><span class="onc-track__dot"></span></div><div class="onc-track__step is-done"><span class="onc-track__dot"></span></div><div class="onc-track__step is-done"><span class="onc-track__dot"></span></div><div class="onc-track__step is-now"><span class="onc-track__dot"></span></div><div class="onc-track__step "><span class="onc-track__dot"></span></div></div></a></section>
+  </div>
+</div>
+    <div class="demo">Mockup Oncoria · presidi reali della provincia di Salerno, persone inventate, quantità e movimenti simulati a scopo dimostrativo</div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script><script src="assets/js/sched.js"></script><script src="assets/js/map.js"></script><script src="assets/js/charts.js"></script>
+<script>OncMap.render(document.getElementById("map-home"),{drug:"tdxd",link:"rete.html"});OncChart.proj(document.getElementById("chart-home"),"tdxd",{w:680,h:270});</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regole e vincoli · Oncoria</title>
+<meta name="description" content="Mockup della dashboard Oncoria per la farmacia ospedaliera: rete oncologica della provincia di Salerno (dati simulati).">
+<link rel="icon" type="image/png" href="assets/img/oncoria-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=League+Spartan:wght@600;700&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="assets/js/app.js"></script>
+</head>
+<body>
+<div class="onc app">
+  <aside class="side" aria-label="Navigazione principale">
+    <a class="brandlink" href="index.html"><img src="assets/img/oncoria-lockup-white.png" alt="Oncoria — L’efficienza che fa muovere la salute"></a>
+    <a class="nav" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="12" width="7" height="9" rx="2"/><rect x="3" y="16" width="7" height="5" rx="2"/></svg>Panoramica</a>
+<a class="nav" href="fabbisogno.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8"/><path d="M15 8h5v5"/></svg>Fabbisogno previsto</a>
+<a class="nav" href="rete.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3z"/><path d="M9 3v15M15 6v15"/></svg>Rete presidi</a>
+<a class="nav" href="suggerimenti.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18c6 0 11-4 13-11"/><path d="M11 6h7v7"/></svg>Suggerimenti<span class="cnt">3</span></a>
+<a class="nav" href="trasferimenti.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="13" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Trasferimenti<span class="cnt">2</span></a>
+<a class="nav" href="ordini.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>Ordini</a>
+<div class="grp">Pilota</div>
+<a class="nav" href="kpi.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>KPI di validazione</a>
+<a class="nav on" href="regole.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>Regole e vincoli</a>
+
+    <div class="me"><span class="av">MR</span><div><b>Dott.ssa M. Rinaldi</b><small>Farmacia ospedaliera · AOU Ruggi</small></div></div>
+  </aside>
+  <main class="main">
+    <div class="top">
+      <div><div class="onc-label">Venerdì 25 settembre 2026 · aggiornato alle 08:40</div><h1>Regole e vincoli</h1></div>
+      <div class="tools"><span class="chip">Ultima modifica <b>lun 21 set · M. Rinaldi</b></span><button class="iconbtn" id="theme" type="button" aria-label="Cambia tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button></div>
+    </div>
+<div class="note"><span>ⓘ</span><span><b>Le regole le definiscono gli operatori.</b> Oncoria le applica per calcolare fabbisogno e suggerimenti; non stabilisce priorità cliniche e non autorizza trasferimenti da solo. Ogni modifica viene registrata.</span></div>
+<div class="grid even">
+  <section class="onc-card">
+    <h2 class="onc-card-title">Previsione</h2>
+    <div class="field"><div class="lbl"><b>Orizzonte di previsione</b><small>Periodo su cui calcolare fabbisogno e saldo</small></div><div class="seg"><button>7 gg</button><button class="on">14 gg</button><button>28 gg</button></div></div>
+    <div class="field"><div class="lbl"><b>Includi sedute da confermare</b><small>Le sedute non ancora confermate entrano nel fabbisogno</small></div><button class="toggle" type="button" role="switch" aria-checked="true" aria-label="Includi sedute da confermare"></button></div>
+    <div class="field"><div class="lbl"><b>Soglia di allerta</b><small>Avvisa quando il saldo scende sotto la scorta minima entro</small></div><span class="num-in"><input type="number" value="7" aria-label="valore"><span>giorni</span></span></div>
+    <div class="field"><div class="lbl"><b>Aggiornamento dati</b><small>Frequenza con cui Oncoria ricalcola la previsione</small></div><span class="num-in"><input type="number" value="15" aria-label="valore"><span>minuti</span></span></div>
+  </section>
+  <section class="onc-card">
+    <h2 class="onc-card-title">Regole di cessione</h2>
+    <div class="field"><div class="lbl"><b>Margine di sicurezza del cedente</b><small>Unità che il cedente conserva oltre il proprio fabbisogno a 14 giorni</small></div><span class="num-in"><input type="number" value="0" aria-label="valore"><span>unità</span></span></div>
+    <div class="field"><div class="lbl"><b>Distanza massima</b><small>Oltre questa distanza il presidio non viene proposto come cedente</small></div><span class="num-in"><input type="number" value="160" aria-label="valore"><span>km</span></span></div>
+    <div class="field"><div class="lbl"><b>Tempo massimo di trasferimento</b><small>Dal ritiro alla presa in carico</small></div><span class="num-in"><input type="number" value="6" aria-label="valore"><span>ore</span></span></div>
+    <div class="field"><div class="lbl"><b>Doppia approvazione</b><small>Servono entrambe le farmacie, cedente e ricevente</small></div><button class="toggle" type="button" role="switch" aria-checked="true" aria-label="Doppia approvazione"></button></div>
+    <div class="field"><div class="lbl"><b>Trasferimenti tra aziende</b><small>Consenti cessioni tra AOU Ruggi e ASL Salerno</small></div><button class="toggle" type="button" role="switch" aria-checked="true" aria-label="Trasferimenti tra aziende"></button></div>
+  </section>
+</div>
+<section class="onc-card">
+  <div class="hd"><div><h2 class="onc-card-title">Parametri per farmaco</h2><div class="sub">AOU Ruggi · perimetro breast cancer</div></div><button class="onc-btn onc-btn--sm onc-btn--primary">Salva modifiche</button></div>
+  <div class="scroll"><table class="onc-table"><thead><tr><th>Farmaco</th><th>Scorta minima</th><th>Lead time ordine</th><th>Scadenza minima per cedere</th><th>Riallocabile</th></tr></thead><tbody><tr><td><div class="drug" style="font-size:13px">Trastuzumab deruxtecan</div><span class="onc-muted">100 mg · fiala · 2–8 °C</span></td><td><span class="num-in"><input type="number" value="1" aria-label="valore"><span>fiala</span></span></td><td><span class="num-in"><input type="number" value="5" aria-label="valore"><span>giorni</span></span></td><td><span class="num-in"><input type="number" value="60" aria-label="valore"><span>giorni</span></span></td><td><button class="toggle" type="button" role="switch" aria-checked="true" aria-label="Riallocabile"></button></td></tr><tr><td><div class="drug" style="font-size:13px">Pembrolizumab</div><span class="onc-muted">100 mg · fiala · 2–8 °C</span></td><td><span class="num-in"><input type="number" value="1" aria-label="valore"><span>fiala</span></span></td><td><span class="num-in"><input type="number" value="5" aria-label="valore"><span>giorni</span></span></td><td><span class="num-in"><input type="number" value="60" aria-label="valore"><span>giorni</span></span></td><td><button class="toggle" type="button" role="switch" aria-checked="true" aria-label="Riallocabile"></button></td></tr><tr><td><div class="drug" style="font-size:13px">Trastuzumab s.c.</div><span class="onc-muted">600 mg · flacone · 2–8 °C</span></td><td><span class="num-in"><input type="number" value="2" aria-label="valore"><span>flaconi</span></span></td><td><span class="num-in"><input type="number" value="4" aria-label="valore"><span>giorni</span></span></td><td><span class="num-in"><input type="number" value="60" aria-label="valore"><span>giorni</span></span></td><td><button class="toggle" type="button" role="switch" aria-checked="true" aria-label="Riallocabile"></button></td></tr><tr><td><div class="drug" style="font-size:13px">Palbociclib</div><span class="onc-muted">125 mg · conf. 21 cps</span></td><td><span class="num-in"><input type="number" value="2" aria-label="valore"><span>conf.</span></span></td><td><span class="num-in"><input type="number" value="2" aria-label="valore"><span>giorni</span></span></td><td><span class="num-in"><input type="number" value="60" aria-label="valore"><span>giorni</span></span></td><td><button class="toggle" type="button" role="switch" aria-checked="true" aria-label="Riallocabile"></button></td></tr><tr><td><div class="drug" style="font-size:13px">Pertuzumab</div><span class="onc-muted">420 mg · fiala · 2–8 °C</span></td><td><span class="num-in"><input type="number" value="1" aria-label="valore"><span>fiala</span></span></td><td><span class="num-in"><input type="number" value="4" aria-label="valore"><span>giorni</span></span></td><td><span class="num-in"><input type="number" value="60" aria-label="valore"><span>giorni</span></span></td><td><button class="toggle" type="button" role="switch" aria-checked="true" aria-label="Riallocabile"></button></td></tr><tr><td><div class="drug" style="font-size:13px">Sacituzumab govitecan</div><span class="onc-muted">180 mg · fiala · 2–8 °C</span></td><td><span class="num-in"><input type="number" value="1" aria-label="valore"><span>fiala</span></span></td><td><span class="num-in"><input type="number" value="6" aria-label="valore"><span>giorni</span></span></td><td><span class="num-in"><input type="number" value="60" aria-label="valore"><span>giorni</span></span></td><td><button class="toggle" type="button" role="switch" aria-checked="true" aria-label="Riallocabile"></button></td></tr></tbody></table></div>
+</section>
+<div class="grid even">
+  <section class="onc-card">
+    <h2 class="onc-card-title">Conservazione e trasporto</h2>
+    <div class="field"><div class="lbl"><b>Catena del freddo 2–8 °C</b><small>Contenitore validato e registrazione continua della temperatura</small></div><button class="toggle" type="button" role="switch" aria-checked="true" aria-label="Catena del freddo"></button></div>
+    <div class="field"><div class="lbl"><b>Blocca preparazioni allestite</b><small>Non proporre mai il trasferimento di preparazioni già ricostituite</small></div><button class="toggle" type="button" role="switch" aria-checked="true" aria-label="Blocca preparazioni allestite"></button></div>
+    <div class="field"><div class="lbl"><b>Escursione termica ammessa</b><small>Oltre questa durata fuori intervallo il lotto va in quarantena</small></div><span class="num-in"><input type="number" value="0" aria-label="valore"><span>minuti</span></span></div>
+  </section>
+  <section class="onc-card">
+    <h2 class="onc-card-title">Governance e dati</h2>
+    <div class="checks" style="margin-top:12px">
+      <div><span class="ok-ic">✓</span><span>Pazienti pseudonimizzati: Oncoria usa codice, data e fabbisogno, non l’identità</span></div>
+      <div><span class="ok-ic">✓</span><span>Registro di ogni suggerimento, decisione e modifica delle regole</span></div>
+      <div><span class="wait-ic">…</span><span>DPIA da completare con i DPO di AOU Ruggi e ASL Salerno prima della Fase 4</span></div>
+      <div><span class="wait-ic">…</span><span>Accesso ai dati dei piani terapeutici: base giuridica da verificare nel pilota</span></div>
+      <div><span class="wait-ic">…</span><span>Qualificazione regolatoria del software (MDCG 2019-11) da valutare sull’intended purpose</span></div>
+    </div>
+  </section>
+</div>
+    <div class="demo">Mockup Oncoria · presidi reali della provincia di Salerno, persone inventate, quantità e movimenti simulati a scopo dimostrativo</div>
+  </main>
+</div>
+
+</body>
+</html>

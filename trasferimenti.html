@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trasferimenti · Oncoria</title>
+<meta name="description" content="Mockup della dashboard Oncoria per la farmacia ospedaliera: rete oncologica della provincia di Salerno (dati simulati).">
+<link rel="icon" type="image/png" href="assets/img/oncoria-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=League+Spartan:wght@600;700&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="assets/js/app.js"></script>
+</head>
+<body>
+<div class="onc app">
+  <aside class="side" aria-label="Navigazione principale">
+    <a class="brandlink" href="index.html"><img src="assets/img/oncoria-lockup-white.png" alt="Oncoria — L’efficienza che fa muovere la salute"></a>
+    <a class="nav" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="12" width="7" height="9" rx="2"/><rect x="3" y="16" width="7" height="5" rx="2"/></svg>Panoramica</a>
+<a class="nav" href="fabbisogno.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8"/><path d="M15 8h5v5"/></svg>Fabbisogno previsto</a>
+<a class="nav" href="rete.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3z"/><path d="M9 3v15M15 6v15"/></svg>Rete presidi</a>
+<a class="nav" href="suggerimenti.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18c6 0 11-4 13-11"/><path d="M11 6h7v7"/></svg>Suggerimenti<span class="cnt">3</span></a>
+<a class="nav on" href="trasferimenti.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="13" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Trasferimenti<span class="cnt">2</span></a>
+<a class="nav" href="ordini.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>Ordini</a>
+<div class="grp">Pilota</div>
+<a class="nav" href="kpi.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>KPI di validazione</a>
+<a class="nav" href="regole.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>Regole e vincoli</a>
+
+    <div class="me"><span class="av">MR</span><div><b>Dott.ssa M. Rinaldi</b><small>Farmacia ospedaliera · AOU Ruggi</small></div></div>
+  </aside>
+  <main class="main">
+    <div class="top">
+      <div><div class="onc-label">Venerdì 25 settembre 2026 · aggiornato alle 08:40</div><h1>Trasferimenti</h1></div>
+      <div class="tools"><span class="chip">Attivi <b>2</b></span><span class="chip">Da prendere in carico <b>1</b></span><button class="iconbtn" id="theme" type="button" aria-label="Cambia tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button></div>
+    </div>
+<style>
+.kb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:1180px){.kb{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.kb{grid-template-columns:minmax(0,1fr)}}
+.tl{display:flex;flex-direction:column}
+</style><section class="onc-card">
+  <div class="hd"><div><h2 class="onc-card-title">Stato dei trasferimenti</h2><div class="sub">Dalla riserva alla presa in carico: la disponibilità si aggiorna nel presidio ricevente solo dopo la presa in carico.</div></div>
+  </div><div style="max-width:720px;margin:4px 0 18px"><div class="onc-track"><div class="onc-track__step is-done"><span class="onc-track__dot"></span>Disponibile</div><div class="onc-track__step is-done"><span class="onc-track__dot"></span>Riservato</div><div class="onc-track__step is-now"><span class="onc-track__dot"></span>In trasferimento</div><div class="onc-track__step"><span class="onc-track__dot"></span>Ricevuto</div><div class="onc-track__step"><span class="onc-track__dot"></span>Disponibile</div></div></div>
+  <div class="kb" id="kb"></div>
+</section>
+<div class="grid even" id="tdetail"></div>
+    <div class="demo">Mockup Oncoria · presidi reali della provincia di Salerno, persone inventate, quantità e movimenti simulati a scopo dimostrativo</div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script>
+(function(){
+const N=Object.fromEntries(ONC.nodes.map(n=>[n.id,n])), DR=Object.fromEntries(ONC.drugs.map(d=>[d.id,d]));
+const T=[
+ {id:'TR-0144',drug:'pembro',src:'vallo',dst:'ruggi',qty:2,lot:'K5530',exp:'02/2027',st:'reserved',sug:'S-0232',
+  ev:[['gio 24 set 15:41','Riservato','2 fiale bloccate nel gestionale del P.O. San Luca'],['sab 26 set 08:00','Ritiro programmato','Contenitore refrigerato validato']],temp:null},
+ {id:'TR-0142',drug:'pertu',src:'ruggi',dst:'eboli',qty:2,lot:'P2291',exp:'04/2027',st:'transit',sug:'S-0228',eta:'08:50',
+  ev:[['mer 23 set 12:10','Riservato','Approvato da entrambe le farmacie'],['oggi 07:50','Preparato','Farmacia AOU Ruggi · DDT interno n. 118'],['oggi 08:05','Ritirato','Trasporto refrigerato · sensore T-12'],['oggi 08:50','Arrivo previsto','Farmacia P.O. Maria SS. Addolorata']],
+  temp:[4.4,4.6,4.9,5.1,5.0,4.8,4.7,4.9]},
+ {id:'TR-0139',drug:'sacit',src:'ruggi',dst:'polla',qty:1,lot:'S0874',exp:'01/2027',st:'received',sug:'S-0225',
+  ev:[['lun 21 set 12:00','Riservato',''],['mar 22 set 11:10','Ritirato',''],['mar 22 set 14:30','Ricevuto','In attesa di presa in carico da parte della farmacia di Polla']],temp:[4.2,4.5,4.8,5.2,5.6,5.3,5.0,4.7]},
+ {id:'TR-0137',drug:'trast',src:'tortora',dst:'eboli',qty:1,lot:'H3302',exp:'09/2027',st:'done',ev:[['sab 19 set 09:00','Riservato',''],['sab 19 set 13:20','Preso in carico','Disponibile a Eboli']],temp:[4.0,4.3,4.4,4.6,4.5,4.4,4.2,4.1]},
+ {id:'TR-0133',drug:'tdxd',src:'vallo',dst:'sapri',qty:2,lot:'T7102',exp:'03/2027',st:'done',ev:[['mer 16 set 10:30','Riservato',''],['mer 16 set 15:45','Preso in carico','Disponibile a Sapri']],temp:[4.8,5.0,5.3,5.5,5.4,5.1,4.9,4.8]},
+ {id:'TR-0130',drug:'palbo',src:'ruggi',dst:'polla',qty:2,lot:'P4380',exp:'10/2027',st:'done',ev:[['lun 14 set 09:15','Riservato',''],['lun 14 set 13:05','Preso in carico','Disponibile a Polla']],temp:null},
+];
+const COLS=[['reserved','Riservati','watch'],['transit','In trasferimento','brand'],['received','Ricevuti · da prendere in carico','surplus'],['done','Completati','balance']];
+const STEP={reserved:1,transit:2,received:3,done:5};
+const u=(d,q)=>q>1?DR[d].unit:DR[d].u1;
+function trk(st){let s='';for(let i=0;i<5;i++){const c=st==='done'||i<STEP[st]?'is-done':(i===STEP[st]?'is-now':'');s+='<div class="onc-track__step '+c+'"><span class="onc-track__dot"></span></div>';}return '<div class="onc-track">'+s+'</div>';}
+document.getElementById('kb').innerHTML=COLS.map(c=>{const it=T.filter(t=>t.st===c[0]);return '<div class="kanban-col"><div class="colh"><span class="onc-label">'+c[1]+'</span><span class="onc-badge onc-badge--'+c[2]+'">'+it.length+'</span></div>'+it.map(t=>'<a class="card-sm" href="#'+t.id+'" data-id="'+t.id+'"><b>'+t.id+' · '+DR[t.drug].name+'</b><small>'+N[t.src].town+' → '+N[t.dst].town+' · '+t.qty+' '+u(t.drug,t.qty)+' · lotto '+t.lot+'</small>'+trk(t.st)+'</a>').join('')+'</div>';}).join('');
+function tempChart(v){
+  const W=520,H=170,L=30,R=10,Tp=12,B=26,lo=0,hi=10,x=i=>L+(W-L-R)*i/(v.length-1),y=t=>Tp+(H-Tp-B)*(hi-t)/(hi-lo);
+  let s='<svg class="chart" viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Temperatura durante il trasporto"><rect x="'+L+'" y="'+y(8)+'" width="'+(W-L-R)+'" height="'+(y(2)-y(8))+'" fill="var(--mint-tint)"/>';
+  [0,2,5,8,10].forEach(t=>{s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(t)+'" y2="'+y(t)+'" stroke="var(--line)" stroke-dasharray="3 3"/><text x="'+(L-6)+'" y="'+(y(t)+4)+'" text-anchor="end">'+t+'°</text>';});
+  s+='<text x="'+(W-R-4)+'" y="'+(y(8)+14)+'" text-anchor="end" style="fill:var(--mint-ink);font-weight:700">intervallo ammesso 2–8 °C</text>';
+  s+='<polyline fill="none" stroke="var(--brand)" stroke-width="2.5" points="'+v.map((t,i)=>x(i)+','+y(t)).join(' ')+'"/>'+v.map((t,i)=>'<circle cx="'+x(i)+'" cy="'+y(t)+'" r="3" fill="var(--brand)"/>').join('');
+  v.forEach((t,i)=>{if(i%2===0)s+='<text x="'+x(i)+'" y="'+(H-6)+'" text-anchor="middle">+'+(i*5)+' min</text>';});
+  return s+'</svg>';
+}
+function show(id){
+  const t=T.find(x=>x.id===id)||T[1], d=DR[t.drug], a=N[t.src], b=N[t.dst];
+  document.querySelectorAll('#kb .card-sm').forEach(c=>c.classList.toggle('on',c.dataset.id===t.id));
+  const lab={reserved:'Riservato',transit:'In viaggio',received:'Ricevuto',done:'Completato'}[t.st];
+  let act={reserved:'<button class="onc-btn onc-btn--primary">Conferma ritiro</button><button class="onc-btn onc-btn--ghost">Annulla riserva</button>',transit:'<button class="onc-btn onc-btn--primary">Segnala anomalia</button><button class="onc-btn">Contatta la farmacia di '+b.town+'</button>',received:'<button class="onc-btn onc-btn--primary">Sollecita presa in carico</button>',done:'<button class="onc-btn">Scarica il registro</button>'}[t.st];
+  document.getElementById('tdetail').innerHTML=
+  '<section class="onc-card"><div class="hd"><div><div class="onc-label">'+t.id+(t.sug?' · da <a href="suggerimenti.html#'+t.sug+'">'+t.sug+'</a>':'')+'</div><h2 class="onc-card-title" style="font-size:24px;line-height:30px">'+d.name+' '+d.dose+'</h2></div><span class="onc-badge onc-badge--'+COLS.find(c=>c[0]===t.st)[2]+'">'+lab+'</span></div>'+trk(t.st)+
+  '<div class="kv" style="margin-top:18px"><span>Origine</span><b>'+a.name+', '+a.town+'</b><span>Destinazione</span><b>'+b.name+', '+b.town+'</b><span>Quantità</span><b>'+t.qty+' '+u(t.drug,t.qty)+'</b><span>Lotto · scadenza</span><b>'+t.lot+' · '+t.exp+'</b><span>Conservazione</span><b>'+(d.form.includes('2–8')?'Refrigerato 2–8 °C, registrazione continua':'Temperatura ambiente')+'</b><span>Distanza</span><b>'+(OncKm(t.src,t.dst))+' km</b>'+(t.eta?'<span>Arrivo previsto</span><b>oggi '+t.eta+'</b>':'')+'</div>'+
+  '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">'+act+'</div></section>'+
+  '<div class="col"><section class="onc-card"><h2 class="onc-card-title" style="margin-bottom:12px">Tracciabilità</h2><div class="steps">'+t.ev.map((e,i)=>'<div class="stp '+(i<t.ev.length-1||t.st==='done'||t.st==='received'?'done':'now')+'"><span class="d"></span><div><b>'+e[1]+'</b><small>'+e[0]+(e[2]?' · '+e[2]:'')+'</small></div></div>').join('')+'</div></section>'+
+  (t.temp?'<section class="onc-card"><div class="hd"><h2 class="onc-card-title">Temperatura durante il trasporto</h2><span class="onc-badge onc-badge--surplus">Nei limiti</span></div>'+tempChart(t.temp)+'</section>':'')+'</div>';
+}
+window.OncKm=function(a,b){const A=N[a],B=N[b];if(a==='ruggi')return B.km;if(b==='ruggi')return A.km;const r=Math.PI/180,dl=(B.lat-A.lat)*r,dn=(B.lon-A.lon)*r,h=Math.sin(dl/2)**2+Math.cos(A.lat*r)*Math.cos(B.lat*r)*Math.sin(dn/2)**2;return Math.round(2*6371*Math.asin(Math.sqrt(h))*1.35/5)*5;};
+window.addEventListener('hashchange',()=>show(location.hash.slice(1)));
+show(location.hash.slice(1)||'TR-0142');
+})();
+</script>
+</body>
+</html>
