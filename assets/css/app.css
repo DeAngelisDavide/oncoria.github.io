@@ -138,7 +138,7 @@ select.chip { appearance: none; font-family: inherit; font-weight: 600; color: v
 .map .sugg { fill: none; stroke: var(--mint-ink); stroke-width: 3.5; stroke-dasharray: 8 5; stroke-linecap: round; }
 .map .alt { fill: none; stroke: var(--line-strong); stroke-width: 1.5; stroke-dasharray: 3 5; }
 .map .altl { font: 500 11px var(--font-sans); fill: var(--ink-muted); paint-order: stroke; stroke: var(--surface-000); stroke-width: 4px; }
-.map .transit { fill: none; stroke: var(--brand); stroke-width: 2; }
+.map .transit { fill: none; stroke: var(--brand); stroke-width: 3; }
 .map .reserved { fill: none; stroke: var(--brand); stroke-width: 2; stroke-dasharray: 2 4; }
 .map .truck { fill: var(--brand); stroke: var(--surface-000); stroke-width: 2; }
 .map .trl { font: 600 11px var(--font-sans); fill: var(--brand); paint-order: stroke; stroke: var(--surface-000); stroke-width: 4px; }
