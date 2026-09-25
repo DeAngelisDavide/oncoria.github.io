@@ -77,9 +77,7 @@
       const id = `${el.id}-${t.id}`;
       s += `<path id="${id}" d="${cv.d}" class="${t.status === 'transit' ? 'transit' : 'reserved'}" marker-end="url(#at-${el.id})"/>`;
       if (t.status === 'transit') s += `<circle r="5" class="truck"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#${id}"/></animateMotion></circle>`;
-      { const lbl = t.status === 'transit' ? `${t.id} · in viaggio · arrivo ${t.eta.replace('oggi ', '')}` : `${t.id} · riservato`, w = lbl.length * 6.2 + 16;
-        const lx = Math.max(4, Math.min(g.W - w - 4, cv.mx + cv.nx * 22 - w / 2)), ly = Math.max(4, cv.my + cv.ny * 22 - 11);
-        s += `<g transform="translate(${lx.toFixed(0)},${ly.toFixed(0)})"><rect width="${w.toFixed(0)}" height="22" rx="11" class="tpill"/><text x="${(w / 2).toFixed(0)}" y="15" class="trl" text-anchor="middle">${lbl}</text></g>`; }
+      s += `<text x="${cv.mx.toFixed(0)}" y="${(cv.my + 16).toFixed(0)}" class="trl" text-anchor="middle" dy="10">${t.id} · ${t.status === 'transit' ? 'in viaggio' : 'riservato'}</text>`;
     });
     // suggerimenti
     sugg.forEach(sg => {
