@@ -5,7 +5,7 @@ a { color: inherit; }
 .app { display: grid; grid-template-columns: 232px minmax(0, 1fr); min-height: 100vh; }
 
 /* ---------- sidebar ---------- */
-.side { background: var(--brand-deep); color: var(--on-brand-deep); padding: 22px 14px; display: flex; flex-direction: column; gap: 4px; position: sticky; top: 0; height: 100vh; box-sizing: border-box; }
+.side { background: var(--brand-deep); color: var(--on-brand-deep); padding: 22px 14px; display: flex; flex-direction: column; gap: 4px; position: sticky; top: 0; height: 100vh; box-sizing: border-box; overflow-y: auto; }
 .side .brandlink { display: block; margin: 0 8px 26px; }
 .side .brandlink img { width: 150px; display: block; }
 .nav { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: var(--radius-md); font-weight: 500; font-size: 14px; color: var(--on-brand-deep); opacity: .8; text-decoration: none; }
@@ -186,3 +186,4 @@ select.chip { appearance: none; font-family: inherit; font-weight: 600; color: v
 
 .onc-table td .onc-muted { overflow-wrap: anywhere; }
 .onc-table .onc-badge { white-space: normal; text-align: left; }
+.nav .ext { margin-left: auto; font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; border: 1px solid rgba(255,255,255,.35); border-radius: var(--radius-pill); padding: 0 6px; line-height: 16px; }

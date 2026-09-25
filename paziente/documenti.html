@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Documenti · Oncoria per i pazienti</title>
+<meta name="description" content="Mockup dell’app Oncoria per i pazienti in cura al Day Hospital Oncologico dell’AOU Ruggi di Salerno (dati simulati).">
+<meta name="theme-color" content="#0a1850">
+<link rel="icon" type="image/png" href="../assets/img/oncoria-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=League+Spartan:wght@600;700&display=swap">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/paziente.css">
+<script src="../assets/js/app.js"></script>
+</head>
+<body class="onc pt">
+<div class="pt-stage">
+  <aside class="pt-aside" aria-label="Informazioni sulla demo">
+    <img class="pt-logo-light" src="../assets/img/oncoria-lockup.png" alt="Oncoria"><img class="pt-logo-dark" src="../assets/img/oncoria-lockup-white.png" alt="Oncoria">
+    <h1>App paziente</h1>
+    <p>La vista di chi è in cura: la prossima seduta, cosa preparare, il calendario. Il paziente vede solo rassicurazione, mai carenze o altri presidi.</p>
+    <nav aria-label="Schermate dell’app"><a href="index.html" class="">Home</a><a href="seduta.html" class="">Dettaglio seduta</a><a href="calendario.html" class="">Calendario</a><a href="percorso.html" class="">Il tuo percorso</a><a href="documenti.html" class="on">Documenti</a><a href="notifiche.html" class="">Notifiche</a><a href="contatti.html" class="">Contatti</a></nav>
+    <div style="display:flex;gap:8px;align-items:center"><a class="onc-btn" href="../index.html" style="text-decoration:none">← Torna alla dashboard</a><button class="pt-iconbtn" id="theme" type="button" aria-label="Cambia tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button></div>
+    <p style="font-size:12px;line-height:17px">Mockup · persona e date inventate, presidio reale.</p>
+  </aside>
+  <div class="pt-device">
+    <div class="pt-status" aria-hidden="true"><span>9:41</span><span>●●● ◔</span></div>
+    <main class="pt-screen">
+
+      <h1 style="margin-top:4px">Documenti</h1>
+      <div class="pt-seg" id="docseg" role="tablist"><button class="on" data-v="all" type="button">Tutti</button><button data-v="ref" type="button">Referti</button><button data-v="ter" type="button">Terapia</button><button data-v="amm" type="button">Altro</button></div>
+      <section class="pt-tile" style="padding-top:4px;padding-bottom:4px" id="docs"><div class="pt-doc" data-cat="ref"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/></svg></span><div class="grow"><b>Esami del sangue<span class="pt-new">nuovo</span></b><small>Referto · 8 settembre</small></div><button class="onc-btn onc-btn--sm" type="button">Apri</button></div><div class="pt-doc" data-cat="ter"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/></svg></span><div class="grow"><b>Piano di cura</b><small>Aggiornato il 3 settembre</small></div><button class="onc-btn onc-btn--sm" type="button">Apri</button></div><div class="pt-doc" data-cat="ter"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/></svg></span><div class="grow"><b>Promemoria seduta del 1 ottobre<span class="pt-new">nuovo</span></b><small>Da mostrare all’accettazione</small></div><button class="onc-btn onc-btn--sm" type="button">Apri</button></div><div class="pt-doc" data-cat="ref"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/></svg></span><div class="grow"><b>Ecocardiogramma</b><small>Referto · 12 agosto</small></div><button class="onc-btn onc-btn--sm" type="button">Apri</button></div><div class="pt-doc" data-cat="amm"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/></svg></span><div class="grow"><b>Consenso informato</b><small>Firmato · giugno 2026</small></div><button class="onc-btn onc-btn--sm" type="button">Apri</button></div><div class="pt-doc" data-cat="amm"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/></svg></span><div class="grow"><b>Informativa privacy</b><small>Come usiamo i tuoi dati</small></div><button class="onc-btn onc-btn--sm" type="button">Apri</button></div></section>
+      <div class="pt-note"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-5M12 8h.01"/></svg><span>I documenti restano nel fascicolo dell’ospedale: qui li puoi consultare e scaricare.</span></div>
+      <p class="pt-demo">Mockup Oncoria · dati simulati · <a href="../index.html">dashboard della farmacia</a></p>
+    </main>
+    <nav class="pt-tabs" aria-label="Navigazione dell’app"><a class="pt-tab" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8v10H3z"/></svg>Home</a><a class="pt-tab" href="calendario.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Calendario</a><a class="pt-tab on" href="documenti.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/></svg>Documenti</a><a class="pt-tab" href="contatti.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Contatti</a></nav>
+  </div>
+</div>
+<script src="../assets/js/paziente.js"></script>
+</body>
+</html>
