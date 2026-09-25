@@ -99,7 +99,7 @@
       s += opt.link ? `<a href="${opt.link}#${n.id}" class="node">${inner}</a>` : `<g class="node" data-node="${n.id}">${inner}</g>`;
     });
     s += '</svg>';
-    s += `<div class="mlegend"><span><i style="background:var(--deficit-tint);border-color:var(--deficit)"></i>Deficit</span><span><i style="background:var(--watch-tint);border-color:var(--watch)"></i>A rischio</span><span><i style="background:var(--balance-tint);border-color:var(--balance)"></i>Equilibrio</span><span><i style="background:var(--mint-tint);border-color:var(--mint-ink)"></i>Surplus</span><span><b class="ln"></b>Suggerito</span><span><b class="ln tr"></b>In viaggio</span></div>`;
+    s += `<div class="mlegend"><span><i style="background:var(--deficit-tint);border-color:var(--deficit)"></i>Deficit</span><span><i style="background:var(--watch-tint);border-color:var(--watch)"></i>A rischio</span><span><i style="background:var(--balance-tint);border-color:var(--balance)"></i>Equilibrio</span><span><i style="background:var(--mint-tint);border-color:var(--mint-ink)"></i>Surplus</span><span><b class="ln"></b>Suggerito</span><span><b class="ln ln-transit"></b>In viaggio</span></div>`;
     el.innerHTML = s;
     return sugg;
   }
