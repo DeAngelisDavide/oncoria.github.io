@@ -58,7 +58,7 @@
     const drug = D.drugs.find(d => d.id === opt.drug);
     const g = D.geo, V = D.values;
     let s = `<svg class="map" viewBox="0 0 ${g.W} ${g.H}" role="img" aria-label="Mappa della provincia di Salerno: saldo a 14 giorni di ${drug.name} per presidio">
-<defs><marker id="ar-${el.id}" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--mint-ink)"/></marker>
+<defs><marker id="ar-${el.id}" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--mint-ink)"/></marker><marker id="at-${el.id}" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--brand)"/></marker>
 <pattern id="sea-${el.id}" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="0.9" fill="var(--line)"/></pattern></defs>
 <rect width="${g.W}" height="${g.H}" fill="url(#sea-${el.id})"/>
 <path d="${g.com}" class="com"/><path d="${g.outline}" class="prov"/>`;
@@ -75,15 +75,17 @@
     D.transfers.filter(t => t.drug === drug.id && t.status !== 'received').forEach(t => {
       const cv = curve(byId[t.src], byId[t.dst], 24, r(t.src) + 3, r(t.dst) + 3);
       const id = `${el.id}-${t.id}`;
-      s += `<path id="${id}" d="${cv.d}" class="${t.status === 'transit' ? 'transit' : 'reserved'}"/>`;
+      s += `<path id="${id}" d="${cv.d}" class="${t.status === 'transit' ? 'transit' : 'reserved'}" marker-end="url(#at-${el.id})"/>`;
       if (t.status === 'transit') s += `<circle r="5" class="truck"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#${id}"/></animateMotion></circle>`;
-      s += `<text x="${cv.mx.toFixed(0)}" y="${(cv.my + 16).toFixed(0)}" class="trl" text-anchor="middle" dy="10">${t.id} · ${t.status === 'transit' ? 'in viaggio' : 'riservato'}</text>`;
+      { const lbl = t.status === 'transit' ? `${t.id} · in viaggio · arrivo ${t.eta.replace('oggi ', '')}` : `${t.id} · riservato`, w = lbl.length * 6.2 + 16;
+        const lx = Math.max(4, Math.min(g.W - w - 4, cv.mx + cv.nx * 22 - w / 2)), ly = Math.max(4, cv.my + cv.ny * 22 - 11);
+        s += `<g transform="translate(${lx.toFixed(0)},${ly.toFixed(0)})"><rect width="${w.toFixed(0)}" height="22" rx="11" class="tpill"/><text x="${(w / 2).toFixed(0)}" y="15" class="trl" text-anchor="middle">${lbl}</text></g>`; }
     });
     // suggerimenti
     sugg.forEach(sg => {
       const cv = curve(byId[sg.src], byId[sg.dst], 28, r(sg.src) + 3, r(sg.dst) + 8);
       s += `<path d="${cv.d}" class="sugg" marker-end="url(#ar-${el.id})"/>`;
-      const S0 = byId[sg.src].xy, rs = r(sg.src); const px = Math.max(4, Math.min(g.W - 124, S0[0] - 60 + cv.nx * (rs + 34))), py = Math.max(4, Math.min(g.H - 40, S0[1] - 18 + cv.ny * (rs + 34)));
+      const S0 = byId[sg.src].xy, S1 = byId[sg.dst].xy, rs = r(sg.src), long = Math.hypot(S1[0] - S0[0], S1[1] - S0[1]) > 150; const rd = r(sg.dst); let px, py; if (long) { px = cv.mx - 60 + cv.nx * 34; py = cv.my - 18 + cv.ny * 34; } else { px = (S0[0] + S1[0]) / 2 - 60; py = Math.max(S0[1] + rs, S1[1] + rd) + 14; } px = Math.max(4, Math.min(g.W - 124, px)); py = Math.max(4, Math.min(g.H - 40, py));
       s += `<g transform="translate(${px.toFixed(0)},${py.toFixed(0)})"><rect width="120" height="36" rx="8" class="pill"/><text x="60" y="15" class="pillt" text-anchor="middle">Suggerito · ${sg.qty} ${sg.qty > 1 ? drug.unit : drug.u1}</text><text x="60" y="29" class="pills" text-anchor="middle">${sg.km} km · ${sg.eta}</text></g>`;
     });
     // nodi
@@ -103,5 +105,54 @@
     el.innerHTML = s;
     return sugg;
   }
-  window.OncMap = { render, suggestions, km, eta, fs, STATE, byId };
+
+  const LBL = { deficit: 'Deficit', watch: 'A rischio', balance: 'Equilibrio', surplus: 'Surplus' };
+  function tracker(st) {
+    const n = { reserved: 1, transit: 2, received: 3 }[st] || 5; let h = '';
+    ['Disponibile', 'Riservato', 'In viaggio', 'Ricevuto', 'Disponibile'].forEach((l, i) => {
+      const c = i < n ? 'is-done' : (i === n ? 'is-now' : '');
+      h += '<div class="onc-track__step ' + c + '"><span class="onc-track__dot"></span>' + l + '</div>';
+    });
+    return '<div class="onc-track" style="margin:10px 0 2px">' + h + '</div>';
+  }
+  /* Mappa + riepilogo + tabella dei presidi + movimenti, per il farmaco scelto */
+  function panel(cfg) {
+    const D = window.ONC, d = D.drugs.find(x => x.id === cfg.drug), id = d.id;
+    if (cfg.select) cfg.select.value = id;
+    if (cfg.title) cfg.title.textContent = (cfg.titlePrefix || 'Mappa della rete · ') + d.name + ' ' + d.dose;
+    const sg = render(cfg.map, { drug: id, link: cfg.link || null });
+    let st = 0, fb = 0, rows = '';
+    D.nodes.forEach(n => {
+      const v = D.values[n.id][id], s = v.stock - v.fabb; st += v.stock; fb += v.fabb;
+      rows += '<tr data-node="' + n.id + '"' + (n.id === 'ruggi' ? ' class="is-selected"' : '') + (cfg.link ? ' data-href="' + cfg.link + '#' + n.id + '"' : '') + '><td><div class="drug" style="font-size:13px">' + n.town + '</div><span class="onc-muted">' + n.short + '</span><span class="onc-muted" style="display:block">' + (n.km ? n.km + ' km da Salerno' : 'il tuo presidio') + '</span></td><td class="r"><b class="' + (s < 0 ? 'neg' : (v.state === 'surplus' ? 'pos' : '')) + '" style="font-size:15px">' + fs(s) + '</b><span class="onc-muted" style="display:block;white-space:nowrap">' + v.stock + ' / ' + v.fabb + '</span></td><td><span class="onc-badge onc-badge--' + v.state + '">' + LBL[v.state] + '</span></td></tr>';
+    });
+    cfg.table.innerHTML = '<thead><tr><th>Presidio</th><th class="r">Saldo<br><span style="font-weight:500;text-transform:none">giac. / fabb.</span></th><th>Stato</th></tr></thead><tbody>' + rows + '</tbody>';
+    const net = st - fb;
+    cfg.sum.innerHTML = '<div><span class="onc-label">Rete provinciale</span><div class="onc-kpi__value" style="font-size:28px;line-height:32px">' + st + '<small>/ ' + fb + '</small></div><span class="onc-muted" style="font-size:12px">giacenza / fabbisogno 14 gg (' + d.unit + ')</span></div><div><span class="onc-label">Saldo di rete</span><div class="onc-kpi__value" style="font-size:28px;line-height:32px;color:' + (net < 0 ? 'var(--deficit)' : 'var(--mint-ink)') + '">' + fs(net) + '</div><span class="onc-muted" style="font-size:12px">' + (net >= 0 ? 'i deficit locali sono compensabili' : 'serve un nuovo ordine') + '</span></div>';
+    let h = '';
+    D.transfers.filter(t => t.drug === id && t.status !== 'received').forEach(t => {
+      h += '<a class="card-sm" href="trasferimenti.html#' + t.id + '" style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><b>' + t.id + ' · ' + (t.status === 'transit' ? 'in viaggio' : 'riservato') + '</b><span class="onc-badge onc-badge--' + (t.status === 'transit' ? 'brand' : 'watch') + '">' + (t.status === 'transit' ? 'In viaggio' : 'Riservato') + '</span></div><small>' + t.qty + ' ' + (t.qty > 1 ? d.unit : d.u1) + ' · lotto ' + t.lot + ' · da ' + byId[t.src].town + ' a ' + byId[t.dst].town + ' (' + km(t.src, t.dst) + ' km)</small><small>Partenza: ' + t.dep + ' · Arrivo: ' + t.eta + (t.note ? '<br>' + t.note : '') + '</small>' + tracker(t.status) + '</a>';
+    });
+    sg.forEach(s => {
+      h += '<div class="note" style="margin-bottom:8px"><span>↗</span><span><b>Suggerito: ' + s.qty + ' ' + (s.qty > 1 ? d.unit : d.u1) + ' da ' + byId[s.src].town + ' a ' + byId[s.dst].town + '</b> · ' + s.km + ' km · ' + s.eta + (s.alt ? '. Alternativa: ' + byId[s.alt.src].town + ' (' + s.alt.km + ' km).' : '.') + ' <a href="suggerimenti.html">Apri →</a></span></div>';
+    });
+    if (!h) h = '<div class="onc-hitl"><span>ⓘ</span>Nessun deficit da compensare in rete per questo farmaco nei prossimi 14 giorni.</div>';
+    cfg.sugg.innerHTML = h;
+    // evidenzia nodo <-> riga
+    const map = cfg.map, tbl = cfg.table;
+    tbl.querySelectorAll('tr[data-node]').forEach(r => {
+      r.addEventListener('mouseenter', () => { const g = map.querySelector('[data-node="' + r.dataset.node + '"], a[href$="#' + r.dataset.node + '"]'); g && g.classList.add('hl'); });
+      r.addEventListener('mouseleave', () => map.querySelectorAll('.hl').forEach(x => x.classList.remove('hl')));
+      if (r.dataset.href) r.addEventListener('click', () => { location.href = r.dataset.href; });
+    });
+    map.querySelectorAll('.node').forEach(g => {
+      const nid = g.dataset.node || (g.getAttribute('href') || '').split('#')[1];
+      g.addEventListener('mouseenter', () => { const r = tbl.querySelector('tr[data-node="' + nid + '"]'); r && r.classList.add('hl'); });
+      g.addEventListener('mouseleave', () => tbl.querySelectorAll('.hl').forEach(x => x.classList.remove('hl')));
+    });
+    return sg;
+  }
+  /* farmaco predefinito: quello con un trasferimento in viaggio, così si vede subito tutto il movimento */
+  const DEFAULT_DRUG = (window.ONC.transfers.find(t => t.status === 'transit') || { drug: 'tdxd' }).drug;
+  window.OncMap = { render, panel, suggestions, km, eta, fs, STATE, byId, DEFAULT_DRUG };
 })();
