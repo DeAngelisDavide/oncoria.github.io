@@ -10,7 +10,7 @@ Il sito è statico (HTML, CSS e JavaScript senza build) e funziona così com’�
 | --- | --- |
 | `index.html` | Panoramica: KPI, mappa della rete, fabbisogno, suggerimento, trasferimenti |
 | `fabbisogno.html` | Fabbisogno previsto: giacenza giorno per giorno, dettaglio per farmaco, somministrazioni programmate |
-| `rete.html` | Rete presidi: mappa interattiva per farmaco, matrice presidi × farmaci, qualità dei dati |
+| `rete.html` | Rete presidi: mappa interattiva per farmaco (di default quello con un trasferimento in viaggio), matrice presidi × farmaci, qualità dei dati |
 | `suggerimenti.html` | Suggerimenti di riallocazione: motivazioni, vincoli, confronto nuovo ordine vs rete, registro |
 | `trasferimenti.html` | Trasferimenti: stato, tracciabilità, temperatura durante il trasporto |
 | `ordini.html` | Ordini: arrivo dell’ordine rispetto alla data del bisogno |
