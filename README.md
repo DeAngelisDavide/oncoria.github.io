@@ -2,9 +2,28 @@
 
 Mockup cliccabile della dashboard Oncoria per la farmacia ospedaliera. Lo scenario è la rete oncologica della provincia di Salerno, vista dalla farmacia dell’AOU San Giovanni di Dio e Ruggi d’Aragona.
 
-Il sito è statico (HTML, CSS e JavaScript senza build) e funziona così com’è su GitHub Pages.
+Oncoria è una piattaforma predittiva per i farmaci oncologici ad alto valore: prevede il fabbisogno di ogni presidio, confronta deficit ed eccedenze nella rete e suggerisce al farmacista se riallocare o fare un nuovo ordine. La decisione resta sempre al farmacista.
+
+> Non ottimizziamo il magazzino del singolo ospedale. Ottimizziamo la disponibilità della rete, senza compromettere il fabbisogno di nessun presidio.
+
+## Hackathon
+
+Progetto sviluppato per l’**Hackathon 2026 della Summer School D3 4 Health**.
+
+## Team
+
+| Nome | Area | Profilo |
+| --- | --- | --- |
+| Michele Picariello | Dominio sanitario · coordinamento del progetto | Dottorando in Ingegneria Industriale · prodotto, processi, KPI, B2G/B2B |
+| Carlo Sorrentino | Management e sicurezza | Dottorando in Cyber Intelligence for Civil Infrastructure |
+| Davide De Angelis | Software e dati | Dottorando in Informatica · Smart Biometric |
+| Guido Immediata | Software e dati | Dottorando in Informatica · AI in Automotive |
+| Francesca Santoriello | Dominio farmaceutico | Laureanda magistrale · Scienze Politiche e Chimica e Tecnologia Farmaceutica |
+| Elena Martucci | Dominio farmaceutico | Laureanda magistrale · Chimica e Tecnologia Farmaceutica |
 
 ## Pagine
+
+Il sito è statico: HTML, CSS e JavaScript, senza passaggi di build.
 
 | File | Schermata |
 | --- | --- |
@@ -19,7 +38,7 @@ Il sito è statico (HTML, CSS e JavaScript senza build) e funziona così com’�
 
 ### Brand identity
 
-`brand.html` (voce **Brand identity** nella barra laterale) mostra il PDF `assets/docs/oncoria-brand-identity.pdf` con un visualizzatore a pagine: frecce, miniature, schermo intero e download. Per aggiornarlo basta sostituire quel file con uno nuovo con lo stesso nome; titolo e numero di pagine si leggono dal PDF. Il visualizzatore usa PDF.js (Mozilla, licenza Apache 2.0) incluso in `assets/vendor/pdfjs/` e funziona quando il sito è servito da un server (GitHub Pages o `python3 -m http.server`); aprendo `brand.html` direttamente dal disco compare il lettore PDF del browser.
+`brand.html` (voce **Brand identity** nella barra laterale) mostra il PDF `assets/docs/oncoria-brand-identity.pdf` con un visualizzatore a pagine: frecce, miniature, schermo intero e download. Per aggiornarlo basta sostituire quel file con uno nuovo con lo stesso nome; titolo e numero di pagine si leggono dal PDF. Il visualizzatore usa PDF.js (Mozilla, licenza Apache 2.0), incluso in `assets/vendor/pdfjs/`, e funziona quando il sito è servito da un server web; aprendo `brand.html` direttamente dal disco compare il lettore PDF del browser.
 
 ### App del paziente
 
@@ -41,25 +60,7 @@ Sul computer l’app si vede dentro la cornice di un telefono, con i link alle s
 
 Il tema predefinito è quello chiaro. Il pulsante con la luna in alto a destra passa al tema notturno blu; la scelta vale per dashboard e app paziente e resta memorizzata nel browser.
 
-I link diretti funzionano anche con l’ancora, per esempio `fabbisogno.html#pembro`, `rete.html#tortora`, `suggerimenti.html#S-0233`, `trasferimenti.html#TR-0144`.
-
-## Pubblicare su GitHub Pages
-
-1. Crea un repository su GitHub, per esempio `oncoria-mockup`.
-2. Carica tutto il contenuto di questa cartella nella radice del repository, file `.nojekyll` compreso.
-3. Vai in **Settings → Pages**, scegli **Deploy from a branch**, branch `main`, cartella `/ (root)`, e salva.
-4. Dopo un minuto il sito è online su `https://<utente>.github.io/oncoria-mockup/`.
-
-Da terminale:
-
-```bash
-git init && git add . && git commit -m "Mockup dashboard Oncoria"
-git branch -M main
-git remote add origin https://github.com/<utente>/oncoria-mockup.git
-git push -u origin main
-```
-
-Per provarlo in locale basta aprire `index.html` nel browser, oppure lanciare `python3 -m http.server` nella cartella.
+I link diretti funzionano anche con l’ancora, per esempio `fabbisogno.html#pembro`, `rete.html#tortora`, `suggerimenti.html#S-0233`, `trasferimenti.html#TR-0144`, `brand.html#p6`.
 
 ## Struttura
 
@@ -70,11 +71,12 @@ Per provarlo in locale basta aprire `index.html` nel browser, oppure lanciare `p
 - `assets/js/sched.js`: somministrazioni e ordini dei prossimi 14 giorni all’AOU Ruggi.
 - `assets/js/map.js`, `charts.js`, `app.js`: mappa, grafici, tema e interazioni.
 - `assets/css/paziente.css`, `assets/js/paziente.js`: stile e interazioni dell’app del paziente.
+- `assets/docs/`: il PDF della brand identity; `assets/vendor/pdfjs/`: il visualizzatore PDF.
 
 Per cambiare i numeri modifica `data.js` e `sched.js`: mappa e grafici si aggiornano da soli. I testi delle pagine sono nei file HTML.
 
 ## Note
 
-- I presidi sono reali (AOU Ruggi e presidi ospedalieri dell’ASL Salerno). Persone, giacenze, fabbisogni, ordini, trasferimenti e KPI sono inventati a scopo dimostrativo.
+- I presidi sono reali (AOU Ruggi e presidi ospedalieri dell’ASL Salerno). Le persone che compaiono nei mockup (farmacista, paziente, medici), le giacenze, i fabbisogni, gli ordini, i trasferimenti e i KPI sono inventati a scopo dimostrativo.
 - I confini dei comuni vengono dai dati ISTAT distribuiti da [openpolis/geojson-italy](https://github.com/openpolis/geojson-italy).
 - I font League Spartan e Barlow vengono caricati da Google Fonts.
