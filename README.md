@@ -1,12 +1,5 @@
 # Oncoria · mockup della dashboard
 
-Mockup cliccabile della dashboard Oncoria per la farmacia ospedaliera. Lo scenario è la rete oncologica della provincia di Salerno, vista dalla farmacia dell’AOU San Giovanni di Dio e Ruggi d’Aragona.
-
-Oncoria è una piattaforma predittiva per i farmaci oncologici ad alto valore: prevede il fabbisogno di ogni presidio, confronta deficit ed eccedenze nella rete e suggerisce al farmacista se riallocare o fare un nuovo ordine. La decisione resta sempre al farmacista.
-
-> Non ottimizziamo il magazzino del singolo ospedale. Ottimizziamo la disponibilità della rete, senza compromettere il fabbisogno di nessun presidio.
-
-## Hackathon
 
 Progetto sviluppato per l’**Hackathon 2026 della Summer School D3 4 Health**.
 
