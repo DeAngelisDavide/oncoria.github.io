@@ -17,6 +17,10 @@ Il sito è statico (HTML, CSS e JavaScript senza build) e funziona così com’�
 | `kpi.html` | KPI di validazione del pilota |
 | `regole.html` | Regole e vincoli definiti dagli operatori |
 
+### Brand identity
+
+`brand.html` (voce **Brand identity** nella barra laterale) mostra il PDF `assets/docs/oncoria-brand-identity.pdf` con un visualizzatore a pagine: frecce, miniature, schermo intero e download. Per aggiornarlo basta sostituire quel file con uno nuovo con lo stesso nome; titolo e numero di pagine si leggono dal PDF. Il visualizzatore usa PDF.js (Mozilla, licenza Apache 2.0) incluso in `assets/vendor/pdfjs/` e funziona quando il sito è servito da un server (GitHub Pages o `python3 -m http.server`); aprendo `brand.html` direttamente dal disco compare il lettore PDF del browser.
+
 ### App del paziente
 
 Si apre dalla dashboard con **App paziente** nella barra laterale (sezione “Altre viste”), oppure da `paziente/index.html`.
