@@ -1,18 +1,25 @@
 # Oncoria · mockup della dashboard
 
+Mockup cliccabile della dashboard Oncoria per la farmacia ospedaliera. Lo scenario è la rete oncologica della provincia di Salerno, vista dalla farmacia dell’AOU San Giovanni di Dio e Ruggi d’Aragona.
+
+Oncoria è una piattaforma predittiva per i farmaci oncologici ad alto valore: prevede il fabbisogno di ogni presidio, confronta deficit ed eccedenze nella rete e suggerisce al farmacista se riallocare o fare un nuovo ordine. La decisione resta sempre al farmacista.
+
+> Non ottimizziamo il magazzino del singolo ospedale. Ottimizziamo la disponibilità della rete, senza compromettere il fabbisogno di nessun presidio.
+
+## Hackathon
 
 Progetto sviluppato per l’**Hackathon 2026 della Summer School D3 4 Health**.
 
 ## Team
 
-| Nome | Area | Profilo |
-| --- | --- | --- |
-| Michele Picariello | Dominio sanitario · coordinamento del progetto | Dottorando in Ingegneria Industriale · prodotto, processi, KPI, B2G/B2B |
-| Carlo Sorrentino | Management e sicurezza | Dottorando in Cyber Intelligence for Civil Infrastructure |
-| Davide De Angelis | Software e dati | Dottorando in Informatica · Smart Biometric |
-| Guido Immediata | Software e dati | Dottorando in Informatica · AI in Automotive |
-| Francesca Santoriello | Dominio farmaceutico | Laureanda magistrale · Scienze Politiche e Chimica e Tecnologia Farmaceutica |
-| Elena Martucci | Dominio farmaceutico | Laureanda magistrale · Chimica e Tecnologia Farmaceutica |
+| Nome | Area | Profilo | Organizzazione |
+| --- | --- | --- | --- |
+| Michele Picariello | Dominio sanitario · coordinamento del progetto | Dottorando in Ingegneria Industriale · prodotto, processi, KPI, B2G/B2B | Università degli Studi della Campania “Luigi Vanvitelli” |
+| Carlo Sorrentino | Management e sicurezza | Dottorando in Cyber Intelligence for Civil Infrastructure | Università degli Studi di Salerno |
+| Davide De Angelis | Software e dati | Dottorando in Informatica · Smart Biometric | Università degli Studi di Salerno |
+| Guido Immediata | Software e dati | Dottorando in Informatica · AI in Automotive | Università degli Studi di Salerno |
+| Francesca Santoriello | Dominio farmaceutico | Laureanda magistrale · Scienze Politiche e Chimica e Tecnologia Farmaceutica | Università degli Studi di Salerno |
+| Elena Martucci | Dominio farmaceutico | Laureanda magistrale · Chimica e Tecnologia Farmaceutica | Università degli Studi di Salerno |
 
 ## Pagine
 
