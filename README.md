@@ -16,8 +16,8 @@ Progetto sviluppato per l’**Hackathon 2026 della Summer School D3 4 Health**.
 | --- | --- | --- | --- |
 | Michele Picariello | Dominio sanitario | Dottorando in Ingegneria Industriale · prodotto, processi, KPI, B2G/B2B | Università degli Studi della Campania “Luigi Vanvitelli” |
 | Carlo Sorrentino | Management e sicurezza | Dottorando in Cyber Intelligence for Civil Infrastructure | Università degli Studi di Salerno |
-| Davide De Angelis | Software e dati | Dottorando in Informatica · Smart Biometric | Università degli Studi di Salerno |
-| Guido Immediata | Software e dati | Dottorando in Informatica · AI in Automotive | Università degli Studi di Salerno |
+| Davide De Angelis | Software e Data Science | Dottorando in Informatica · Smart Biometric | Università degli Studi di Salerno |
+| Guido Immediata | Software e Data Science | Dottorando in Informatica · AI in Automotive | Università degli Studi di Salerno |
 | Francesca Santoriello | Dominio farmaceutico | Laureanda magistrale · Scienze Politiche e Chimica e Tecnologia Farmaceutica | Università degli Studi di Salerno |
 | Elena Martucci | Dominio farmaceutico | Laureanda magistrale · Chimica e Tecnologia Farmaceutica | Università degli Studi di Salerno |
 
